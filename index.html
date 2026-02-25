@@ -9,8 +9,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<style>/* LOGO SIZE FIX */
-
+<style>
+/* LOGO SIZE FIX */
 .logo-ico{
   width:90px;
   height:90px;
@@ -21,9 +21,9 @@
   height:90px;
   object-fit:contain;
 }
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    ROOT VARIABLES
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 :root{
   --blue:#0A4D8C;--blue-dk:#073A6B;--blue-lt:#1565C0;
   --green:#2E8B57;--green-lt:#3AA368;
@@ -40,10 +40,10 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    NAV
-═══════════════════════════════════════════════ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 3%;height:70px;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(10,77,140,.09);transition:box-shadow .3s;}
+═══════════════════════════════════════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 3%;height:70px;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);}
 .nav.scrolled{box-shadow:var(--sh-md);}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-ico{
@@ -72,25 +72,25 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 .mob-menu a{text-decoration:none;color:var(--text);font-weight:500;padding:12px 16px;border-radius:10px;font-size:15px;cursor:pointer;}
 .mob-menu a:hover{background:var(--gray-lt);}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    HERO
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:70px;}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,77,140,.90) 0%,rgba(10,77,140,.65) 45%,rgba(46,139,87,.70) 100%),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1800&q=80') center/cover no-repeat;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,77,140,.90) 0%,rgba(10,77,140,.65) 45%,rgba(46,139,87,.70) 100%),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80');background-size:cover;background-position:center;}
 .hero-g1{position:absolute;bottom:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,124,0,.2) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
 .hero-g2{position:absolute;top:80px;left:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(46,139,87,.22) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
 .hero-wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 4%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
 .hero-txt{color:var(--white);}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.18);border:1px solid rgba(245,124,0,.35);padding:8px 18px;border-radius:50px;font-size:12px;font-weight:600;color:#FFCC80;margin-bottom:26px;letter-spacing:.5px;text-transform:uppercase;animation:fadeUp .8s ease both;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.18);border:1px solid rgba(245,124,0,.35);padding:8px 18px;border-radius:50px;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);}
 .hero-badge::before{content:'●';color:var(--orange);font-size:8px;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .hero-txt h1{font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,54px);font-weight:800;line-height:1.15;margin-bottom:20px;animation:fadeUp .8s .1s ease both;}
 .hero-txt h1 em{color:var(--orange);font-style:normal;}
 .hero-txt p{font-size:clamp(14px,1.6vw,16px);line-height:1.75;color:rgba(255,255,255,.85);max-width:480px;margin-bottom:36px;animation:fadeUp .8s .2s ease both;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s .3s ease both;}
-.btn-org{background:var(--orange);color:var(--white);padding:13px 28px;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;box-shadow:0 4px 20px rgba(245,124,0,.5);font-family:'Poppins',sans-serif;cursor:pointer;border:none;}
+.btn-org{background:var(--orange);color:var(--white);padding:13px 28px;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;cursor:pointer;border:none;}
 .btn-org:hover{background:#d96d00;transform:translateY(-3px);box-shadow:0 8px 30px rgba(245,124,0,.6);}
-.btn-wh{background:rgba(255,255,255,.13);color:var(--white);padding:13px 28px;border-radius:12px;border:1.5px solid rgba(255,255,255,.45);font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;backdrop-filter:blur(8px);font-family:'Poppins',sans-serif;cursor:pointer;}
+.btn-wh{background:rgba(255,255,255,.13);color:var(--white);padding:13px 28px;border-radius:12px;border:1.5px solid rgba(255,255,255,.45);font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;cursor:pointer;}
 .btn-wh:hover{background:rgba(255,255,255,.22);transform:translateY(-3px);}
 .hero-card{background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:28px;color:var(--white);animation:fadeUp .8s .4s ease both;}
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -100,14 +100,14 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 .hero-q{margin-top:18px;padding:16px;background:rgba(46,139,87,.2);border-radius:13px;border-left:3px solid #3AA368;}
 .hero-q p{font-size:13px;line-height:1.65;color:rgba(255,255,255,.85);font-style:italic;}
 .hero-q cite{display:block;margin-top:8px;font-size:12px;color:var(--orange);font-weight:700;font-style:normal;}
-.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;animation:bob 2s infinite;}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.8px;text-transform:uppercase;animation:bob 2.5s infinite;}
 .scroll-line{width:1px;height:34px;background:rgba(255,255,255,.3);}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    CLOCK WIDGET (TOP-RIGHT FLOATING)
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 .clock-widget{
   position:fixed;top:80px;right:16px;z-index:990;
   width:280px;
@@ -154,9 +154,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 .cw-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .3s;cursor:pointer;}
 .cw-dot.active{background:var(--orange);width:14px;border-radius:3px;}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    MODAL SYSTEM
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 .modal-overlay{
   position:fixed;inset:0;z-index:2000;
   background:rgba(7,58,107,0.75);
@@ -183,7 +183,7 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 }
 .modal-hd h2{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--blue);}
 .modal-hd span{font-size:12px;color:var(--gray);}
-.modal-close{width:32px;height:32px;border-radius:8px;border:none;background:var(--gray-lt);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--gray);}
+.modal-close{width:32px;height:32px;border-radius:8px;border:none;background:var(--gray-lt);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--text);}
 .modal-close:hover{background:#fee2e2;color:#dc2626;}
 .modal-body{padding:24px 28px 28px;}
 
@@ -233,9 +233,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 }
 .btn-blue-full:hover{background:var(--blue-lt);transform:translateY(-2px);}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    SUCCESS SCREEN
-═══════════════════════════════════════════════ */
+══════════════════════��════════════════════ */
 .success-overlay{
   position:fixed;inset:0;z-index:3000;
   background:linear-gradient(135deg,var(--blue-dk) 0%,#0d4f30 100%);
@@ -269,9 +269,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 }
 .btn-goto-profile:hover{background:#d96d00;transform:translateY(-3px);}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    PROFILE DASHBOARD
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 .profile-overlay{
   position:fixed;inset:0;z-index:2500;
   background:linear-gradient(135deg,#EFF6FF 0%,#F0FDF4 100%);
@@ -303,7 +303,7 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 }
 .profile-photo-wrap{position:relative;width:120px;height:120px;margin:0 auto 16px;}
 .profile-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--blue);}
-.profile-photo-default{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:44px;border:4px solid var(--blue);color:var(--white);}
+.profile-photo-default{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:44px;border:4px solid var(--blue);}
 .photo-upload-btn{
   position:absolute;bottom:2px;right:2px;
   width:32px;height:32px;border-radius:50%;
@@ -362,9 +362,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 .pfield input[readonly]{background:var(--off);color:var(--gray);cursor:not-allowed;}
 .pfield .locked-tag{font-size:11px;color:var(--gray);margin-top:3px;}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    QR PUBLIC PROFILE
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 .qr-profile-card{
   background:var(--white);border-radius:24px;
   max-width:380px;width:100%;
@@ -414,9 +414,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
   font-size:12px;color:var(--gray);margin-top:8px;
 }
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    DIGITAL ID CARD (for PDF)
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 #id-card-template{
   position:fixed;left:-9999px;top:-9999px;
   width:340px;background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 60%,#1B5E20 100%);
@@ -440,9 +440,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 .id-card-id{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#FFDD80;letter-spacing:1.5px;}
 .id-card-qr{width:50px;height:50px;}
 
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════
    SECTION HELPERS
-═══════════════════════════════════════════════ */
+═══════════════════════════════════════════ */
 .sec{padding:80px 4%;max-width:1200px;margin:0 auto;}
 .bg-off{background:var(--off);}
 .lbl{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:12px;font-family:'Poppins',sans-serif;}
@@ -545,9 +545,9 @@ body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white
 .jn-ico{font-size:36px;margin-bottom:13px;}
 .jn-card h3{font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:var(--blue);margin-bottom:9px;}
 .jn-card p{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:22px;}
-.btn-blue{background:var(--blue);color:var(--white);padding:12px 26px;border-radius:11px;border:none;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;box-shadow:0 4px 16px rgba(10,77,140,.3);font-family:'Poppins',sans-serif;cursor:pointer;}
+.btn-blue{background:var(--blue);color:var(--white);padding:12px 26px;border-radius:11px;border:none;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s;cursor:pointer;}
 .btn-blue:hover{background:var(--blue-lt);transform:translateY(-2px);}
-.btn-green{background:var(--green);color:var(--white);padding:12px 26px;border-radius:11px;border:none;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;box-shadow:0 4px 16px rgba(46,139,87,.3);font-family:'Poppins',sans-serif;cursor:pointer;}
+.btn-green{background:var(--green);color:var(--white);padding:12px 26px;border-radius:11px;border:none;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s;cursor:pointer;}
 .btn-green:hover{background:var(--green-lt);transform:translateY(-2px);}
 .trust-row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--gray-lt);}
 .trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gray);}
@@ -646,9 +646,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     NAVIGATION
-═══════════════════════════════════════════ -->
+<!-- NAVIGATION -->
 <nav class="nav" id="navbar">
   <a href="#" class="logo">
     <img src="Logo.png" class="logo-ico" alt="My Lifeline Foundation Logo">
@@ -663,7 +661,6 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
     <a href="#programs">Programs</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
-    <!-- Dynamic auth buttons injected by JS -->
     <span id="navAuthButtons"></span>
   </div>
   <div class="hamburger" onclick="toggleMenu()">
@@ -680,9 +677,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   <div id="mobAuthButtons" style="display:flex;flex-direction:column;gap:6px;"></div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     CLOCK WIDGET (FLOATING TOP-RIGHT)
-═══════════════════════════════════════════ -->
+<!-- CLOCK WIDGET -->
 <div class="clock-widget" id="clockWidget">
   <div class="cw-time" id="cwTime">00:00:00</div>
   <div class="cw-date" id="cwDate">--/--/----</div>
@@ -693,9 +688,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   <div class="cw-dots" id="cwDots"></div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-g1"></div>
@@ -709,13 +702,21 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
         <button class="btn-org" onclick="handleDonate()">❤️ Donate Now</button>
         <button class="btn-wh" onclick="handleVolunteerBtn()">🤝 Join as Volunteer</button>
       </div>
-      
+    </div>
+    <div class="hero-card">
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-n">500+</div><div class="h-stat-l">Families Helped</div></div>
+        <div class="h-stat"><div class="h-stat-n">50+</div><div class="h-stat-l">Programs</div></div>
+        <div class="h-stat"><div class="h-stat-n">1000+</div><div class="h-stat-l">Youth Reached</div></div>
+        <div class="h-stat"><div class="h-stat-n">24/7</div><div class="h-stat-l">Support</div></div>
+      </div>
+      <div class="hero-q"><p>"Education is the most powerful tool we can give to change the world."</p><cite>— My Lifeline Foundation</cite></div>
+    </div>
+  </div>
   <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     ABOUT US
-═══════════════════════════════════════════ -->
+<!-- ABOUT -->
 <section class="bg-off" id="about">
   <div class="sec">
     <div class="about-grid">
@@ -727,20 +728,18 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
       <div class="reveal d2">
         <div class="lbl">Who We Are</div>
         <h2 class="sec-title">About <em>My Lifeline</em><br>Foundation</h2>
-        <p class="sec-desc" style="margin-bottom:14px;">My Lifeline Foundation is a nonprofit organization dedicated to uplifting underprivileged communities in rural Odisha. We focus on education, health awareness, and youth development to create sustainable change and improve quality of life.</p>
+        <p class="sec-desc" style="margin-bottom:14px;">My Lifeline Foundation is a nonprofit organization dedicated to uplifting underprivileged communities in rural Odisha. We focus on education, health awareness, and youth development to create lasting positive change.</p>
         <p class="sec-desc" style="font-size:14px;">Incorporated under Section 8 of the Companies Act 2013, we operate with full transparency and community trust.</p>
         <div class="mv-grid">
           <div class="mv-card mv-m"><h4>🎯 Our Mission</h4><p>To empower rural communities through education, health awareness, and youth development programs that create long-term positive impact.</p></div>
-          <div class="mv-card mv-v"><h4>🌅 Our Vision</h4><p>A society where every child has access to education, every family has basic health awareness, and every youth has opportunity and guidance.</p></div>
+          <div class="mv-card mv-v"><h4>🌅 Our Vision</h4><p>A society where every child has access to education, every family has basic health awareness, and every youth has opportunity.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     PROGRAMS
-═══════════════════════════════════════════ -->
+<!-- PROGRAMS -->
 <section id="programs">
   <div class="sec">
     <div class="prg-hd reveal">
@@ -752,25 +751,23 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
       <div class="prg-card reveal">
         <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education" class="prg-img">
         <div class="prg-bar"></div>
-        <div class="prg-body"><div class="prg-ico">🎓</div><h3>Education Support</h3><p>We help children from rural areas access quality education, learning materials, and academic guidance.</p><a href="#">Learn More →</a></div>
+        <div class="prg-body"><div class="prg-ico">🎓</div><h3>Education Support</h3><p>We help children from rural areas access quality education, learning materials, and academic guidance.</p><a href="#programs">Learn More →</a></div>
       </div>
       <div class="prg-card reveal d2">
         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Health" class="prg-img">
         <div class="prg-bar"></div>
-        <div class="prg-body"><div class="prg-ico">🩺</div><h3>Health Awareness</h3><p>We organise health camps and awareness programs to promote better health practices in villages.</p><a href="#">Learn More →</a></div>
+        <div class="prg-body"><div class="prg-ico">🩺</div><h3>Health Awareness</h3><p>We organise health camps and awareness programs to promote better health practices in villages.</p><a href="#programs">Learn More →</a></div>
       </div>
       <div class="prg-card reveal d3">
         <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Youth" class="prg-img">
         <div class="prg-bar"></div>
-        <div class="prg-body"><div class="prg-ico">👨‍🌾</div><h3>Rural Youth Development</h3><p>We guide rural youth with skills, training, and career direction for a better future.</p><a href="#">Learn More →</a></div>
+        <div class="prg-body"><div class="prg-ico">👨‍🌾</div><h3>Rural Youth Development</h3><p>We guide rural youth with skills, training, and career direction for a better future.</p><a href="#programs">Learn More →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     IMPACT
-═══════════════════════════════════════════ -->
+<!-- IMPACT -->
 <section class="imp-sec">
   <div class="imp-in">
     <div class="imp-hd reveal">
@@ -779,16 +776,14 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
       <p class="sec-desc">Every number represents a real life touched, a family uplifted.</p>
     </div>
     <div class="imp-grid">
-      <div class="imp-card reveal"><div class="imp-ico">🏠</div><div class="imp-num" data-target="500">0<span style="font-size:.55em">+</span></div><div class="imp-lbl">Families Helped</div></div>
-      <div class="imp-card reveal d2"><div class="imp-ico">📋</div><div class="imp-num" data-target="50">0<span style="font-size:.55em">+</span></div><div class="imp-lbl">Programs Conducted</div></div>
-      <div class="imp-card reveal d3"><div class="imp-ico">🌟</div><div class="imp-num" data-target="1000">0<span style="font-size:.55em">+</span></div><div class="imp-lbl">Youth Reached</div></div>
+      <div class="imp-card reveal"><div class="imp-ico">🏠</div><div class="imp-num">500<span style="font-size:.55em">+</span></div><div class="imp-lbl">Families Helped</div></div>
+      <div class="imp-card reveal d2"><div class="imp-ico">📋</div><div class="imp-num">50<span style="font-size:.55em">+</span></div><div class="imp-lbl">Programs Conducted</div></div>
+      <div class="imp-card reveal d3"><div class="imp-ico">🌟</div><div class="imp-num">1000<span style="font-size:.55em">+</span></div><div class="imp-lbl">Youth Reached</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     GALLERY + STORIES
-═══════════════════════════════════════════ -->
+<!-- GALLERY -->
 <section id="gallery">
   <div class="sec">
     <div class="gal-hd reveal">
@@ -803,15 +798,13 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
       <div class="gi g5"><img src="https://images.unsplash.com/photo-1609220136736-443140cfeaa5?w=400&q=80" alt="Community"><div class="gi-ov"><span class="gi-cap">Community programme</span></div></div>
     </div>
     <div class="stories">
-      <div class="st-card reveal"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80" alt="" class="st-av"><div class="st-body"><blockquote>"Because of My Lifeline Foundation, my child is going to school again. They helped us with everything."</blockquote><cite>Mother of a Beneficiary</cite><div class="loc">📍 Kendrapara, Odisha</div></div></div>
-      <div class="st-card reveal d2"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="" class="st-av"><div class="st-body"><blockquote>"The youth development program gave me confidence and a clear direction. I now run my own small business."</blockquote><cite>Youth Programme Graduate</cite><div class="loc">📍 Rural Odisha</div></div></div>
+      <div class="st-card reveal"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80" alt="" class="st-av"><div class="st-body"><blockquote>"Because of My Lifeline Foundation, my daughter now goes to school. We never thought this would be possible."</blockquote><cite>Rajesh Kumar</cite><span class="loc">📍 Kendrapara, Odisha</span></div></div>
+      <div class="st-card reveal d2"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="" class="st-av"><div class="st-body"><blockquote>"The youth development program changed my perspective and gave me a career path I never imagined."</blockquote><cite>Priya Patel</cite><span class="loc">📍 Cuttack, Odisha</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     JOIN THE MOVEMENT
-═══════════════════════════════════════════ -->
+<!-- JOIN -->
 <section class="bg-off" id="volunteer">
   <div class="sec">
     <div class="join-hd reveal">
@@ -820,7 +813,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
       <p class="sec-desc">Whether you donate or give your time — every contribution transforms lives in rural Odisha.</p>
     </div>
     <div class="join-cards">
-      <div class="jn-card reveal" id="donateSection">
+      <div class="jn-card reveal">
         <div class="jn-ico">❤️</div>
         <h3>Donate Now</h3>
         <p>Your donation funds education, health camps, and youth programs. 80G tax exemption available.</p>
@@ -842,9 +835,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer id="contact">
   <div class="ft-top">
     <div class="ft-brand">
@@ -855,8 +846,8 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
         <a href="#" class="soc">𝗙</a><a href="#" class="soc">📷</a><a href="#" class="soc">𝕏</a><a href="#" class="soc">▶</a><a href="#" class="soc">💬</a>
       </div>
     </div>
-    <div class="ft-col"><h4>Quick Links</h4><ul><li><a href="#">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#programs">Programs</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#volunteer">Volunteer</a></li></ul></div>
-    <div class="ft-col"><h4>Programs</h4><ul><li><a href="#programs">🎓 Education Support</a></li><li><a href="#programs">🩺 Health Awareness</a></li><li><a href="#programs">👨‍🌾 Youth Development</a></li><li><a href="#">👩 Women Empowerment</a></li></ul></div>
+    <div class="ft-col"><h4>Quick Links</h4><ul><li><a href="#">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#programs">Programs</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Programs</h4><ul><li><a href="#programs">🎓 Education Support</a></li><li><a href="#programs">🩺 Health Awareness</a></li><li><a href="#programs">👨‍🌾 Youth Development</a></li></ul></div>
     <div class="ft-col"><h4>Contact Us</h4>
       <div class="ft-ci"><div class="ft-ci-ico">📍</div><div class="ft-ci-txt">Maruti chhaka, Gula Nagar, Kendrapara – 754211, Odisha, India</div></div>
       <div class="ft-ci"><div class="ft-ci-ico">📞</div><div class="ft-ci-txt"><a href="tel:06727796700">06727-796700</a></div></div>
@@ -864,12 +855,10 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
       <div class="ft-ci"><div class="ft-ci-ico">🌐</div><div class="ft-ci-txt"><a href="http://www.mylifelinefoundation.org" target="_blank">www.mylifelinefoundation.org</a></div></div>
     </div>
   </div>
-  <div class="ft-bot-wrap"><div class="ft-bot-in"><span>© 2025 My Lifeline Foundation. All Rights Reserved. | Reg: U85100OR2020NPL032868 | PAN: AANCM3910F | Section 8, Companies Act 2013</span><span>Made with ❤️ for Rural Odisha</span></div></div>
+  <div class="ft-bot-wrap"><div class="ft-bot-in"><span>© 2025 My Lifeline Foundation. All Rights Reserved. | Reg: U85100OR2020NPL032868 | PAN: AANCM3910F | Section 8, Companies Act 2013</span><span>Privacy Policy | Terms & Conditions</span></div></div>
 </footer>
 
-<!-- ═══════════════════════════════════════════
-     REGISTER MODAL
-═══════════════════════════════════════════ -->
+<!-- REGISTER MODAL -->
 <div class="modal-overlay" id="modalRegister">
   <div class="modal-box wide">
     <div class="modal-hd">
@@ -928,12 +917,12 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
           <p>My Lifeline Foundation is a Section 8 non-profit organization registered under the Companies Act 2013.</p>
           <p>I confirm that all information provided above is true and correct to the best of my knowledge.</p>
           <p>Volunteer registration does not create any employment relationship or salary/remuneration entitlement.</p>
-          <p>The Foundation may verify, approve, suspend or deactivate my volunteer account at any time without prior notice.</p>
-          <p>My personal data will be used only for organizational, social, and program-related purposes of My Lifeline Foundation.</p>
+          <p>The Foundation may verify, approve, suspend or deactivate my volunteer account at any time.</p>
+          <p>My personal data will be used only for organizational and program-related purposes.</p>
         </div>
         <label class="tc-check">
           <input type="checkbox" id="tcCheckbox" onchange="toggleSubmit()">
-          <span>I have read and agree to the <strong>Terms & Conditions</strong> of My Lifeline Foundation. I confirm all information is accurate.</span>
+          <span>I have read and agree to the <strong>Terms & Conditions</strong>. I confirm all information is accurate.</span>
         </label>
         <button type="submit" class="btn-submit" id="submitBtn" disabled>🤝 Complete Registration</button>
       </form>
@@ -941,9 +930,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     LOGIN MODAL
-═══════════════════════════════════════════ -->
+<!-- LOGIN MODAL -->
 <div class="modal-overlay" id="modalLogin">
   <div class="modal-box" style="max-width:440px;">
     <div class="modal-hd">
@@ -972,9 +959,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     QR PUBLIC PROFILE MODAL
-═══════════════════════════════════════════ -->
+<!-- QR PUBLIC PROFILE MODAL -->
 <div class="modal-overlay" id="modalQRProfile">
   <div class="qr-profile-card">
     <div class="qr-profile-header">
@@ -997,788 +982,438 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SUCCESS SCREEN
-═══════════════════════════════════════════ -->
-<div class="success-overlay" id="successScreen">
-  <div class="success-circle">✅</div>
-  <h1>Thank you for joining My Lifeline Foundation as a Volunteer!</h1>
-  <p>Your registration is successful. Your unique Volunteer ID has been generated. Welcome to the family! 🌱</p>
-  <div class="success-id-badge" id="successIdBadge">MLF-OD-000001</div>
-  <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:24px;">Save your Volunteer ID — you'll need it to log in to your profile.</p>
-  <button class="btn-goto-profile" onclick="gotoProfile()">👤 Go to My Profile</button>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     PROFILE DASHBOARD
-═══════════════════════════════════════════ -->
-<div class="profile-overlay" id="profileDashboard">
+<!-- PROFILE DASHBOARD OVERLAY -->
+<div class="profile-overlay" id="profileDash">
   <div class="profile-header-bar">
-    <div class="logo-w">
-      <div class="logo-ico" style="width:36px;height:36px;font-size:16px;">🌱</div>
-      <span>My Lifeline Foundation — Volunteer Portal</span>
-    </div>
+    <div class="logo-w"><span>My Lifeline Foundation - Volunteer Dashboard</span></div>
     <div class="profile-header-btns">
-      <button class="btn-sm btn-sm-save" onclick="saveProfileChanges()">💾 Save Changes</button>
-      <button class="btn-sm btn-sm-outline" onclick="window.location.href='#'">🏠 Home</button>
-      <button class="btn-sm btn-sm-danger" onclick="logoutVolunteer()">🚪 Logout</button>
+      <button class="btn-sm btn-sm-outline" onclick="showQRProfile()">📱 Share QR Profile</button>
+      <button class="btn-sm btn-sm-save" onclick="downloadIDCard()">📥 Download ID</button>
+      <button class="btn-sm btn-sm-danger" onclick="logoutProfile()">🚪 Logout</button>
     </div>
   </div>
   <div class="profile-container">
     <div class="profile-grid">
-      <!-- LEFT: ID CARD -->
       <div class="profile-card-left">
         <div class="profile-photo-wrap">
-          <div id="profilePhotoDisplay" class="profile-photo-default">👤</div>
-          <div class="photo-upload-btn" onclick="document.getElementById('photoInput').click()">📷</div>
-          <input type="file" id="photoInput" class="photo-upload-input" accept="image/*" onchange="handlePhotoUpload(event)">
+          <div class="profile-photo-default" id="profilePhotoDisplay">👤</div>
+          <div class="photo-upload-btn" onclick="triggerPhotoUpload()">📷</div>
+          <input type="file" id="photoUploadInput" class="photo-upload-input" accept="image/*">
         </div>
-        <div class="profile-name" id="displayName">Volunteer Name</div>
-        <div class="profile-id-tag" id="displayVolId">MLF-OD-000001</div>
-        <div class="profile-status">Active Volunteer</div>
+        <div class="profile-name" id="profileName">Loading...</div>
+        <div class="profile-id-tag" id="profileID">MLF-OD-000000</div>
+        <div class="profile-status">Verified Volunteer</div>
         <div class="qr-wrapper">
-          <div id="profile-qr-code" style="display:flex;justify-content:center;"></div>
-          <p>Scan to view public profile</p>
+          <div id="profile-qr-code"></div>
+          <p>Scan to share profile</p>
         </div>
-        <button class="btn-download-id" onclick="downloadIDCard()">⬇️ Download Digital ID Card</button>
+        <button class="btn-download-id" onclick="downloadIDCard()">📥 Download ID Card</button>
       </div>
-
-      <!-- RIGHT: EDIT FORM -->
       <div class="profile-card-right">
         <div class="profile-section-title">👤 Personal Information</div>
         <div class="profile-field-row">
-          <div class="pfield"><label>Full Name</label><input type="text" id="p-name" placeholder="Full name"></div>
-          <div class="pfield"><label>Date of Birth</label><input type="date" id="p-dob"></div>
+          <div class="pfield"><label>Full Name</label><input type="text" id="prf-name" readonly></div>
+          <div class="pfield"><label>Date of Birth</label><input type="text" id="prf-dob" readonly></div>
         </div>
         <div class="profile-field-row">
-          <div class="pfield"><label>Father's Name</label><input type="text" id="p-father" placeholder="Father's name"></div>
-          <div class="pfield"><label>Mother's Name</label><input type="text" id="p-mother" placeholder="Mother's name"></div>
+          <div class="pfield"><label>Father's Name</label><input type="text" id="prf-father" readonly></div>
+          <div class="pfield"><label>Mother's Name</label><input type="text" id="prf-mother" readonly></div>
         </div>
         <div class="profile-field-row">
-          <div class="pfield"><label>Occupation</label><input type="text" id="p-occupation" placeholder="Your occupation"></div>
-          <div class="pfield"><label>Mobile Number</label><input type="tel" id="p-mobile" placeholder="Mobile number" maxlength="10"></div>
+          <div class="pfield"><label>Occupation</label><input type="text" id="prf-occupation" readonly></div>
+          <div class="pfield"><label>Mobile Number</label><input type="text" id="prf-mobile" readonly></div>
         </div>
         <div class="profile-field-row single">
           <div class="pfield">
             <label>Aadhaar Number</label>
-            <input type="text" id="p-aadhaar" readonly>
-            <span class="locked-tag">🔒 Aadhaar is masked for security. Not editable.</span>
+            <input type="text" id="prf-aadhaar" readonly>
+            <span class="locked-tag">🔒 Last 4 digits only</span>
           </div>
         </div>
 
-        <div class="profile-section-title">🏠 Address Information</div>
+        <div class="profile-section-title">🏠 Address Details</div>
         <div class="profile-field-row">
-          <div class="pfield"><label>AT (Village)</label><input type="text" id="p-at" placeholder="Village / Area"></div>
-          <div class="pfield"><label>Post</label><input type="text" id="p-post" placeholder="Post office"></div>
+          <div class="pfield"><label>AT (Village)</label><input type="text" id="prf-at" readonly></div>
+          <div class="pfield"><label>Post</label><input type="text" id="prf-post" readonly></div>
         </div>
         <div class="profile-field-row">
-          <div class="pfield"><label>Police Station</label><input type="text" id="p-ps" placeholder="Police Station"></div>
-          <div class="pfield"><label>District</label><input type="text" id="p-district" placeholder="District"></div>
+          <div class="pfield"><label>Police Station</label><input type="text" id="prf-ps" readonly></div>
+          <div class="pfield"><label>District</label><input type="text" id="prf-district" readonly></div>
         </div>
         <div class="profile-field-row">
-          <div class="pfield"><label>State</label>
-            <select id="p-state">
-              <option value="Odisha">Odisha</option>
-              <option value="West Bengal">West Bengal</option>
-              <option value="Jharkhand">Jharkhand</option>
-              <option value="Chhattisgarh">Chhattisgarh</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="pfield"><label>PIN Code</label><input type="text" id="p-pin" placeholder="PIN Code" maxlength="6"></div>
+          <div class="pfield"><label>State</label><input type="text" id="prf-state" readonly></div>
+          <div class="pfield"><label>PIN Code</label><input type="text" id="prf-pin" readonly></div>
         </div>
 
-        <div class="profile-section-title">📋 Account Information</div>
-        <div class="profile-field-row">
-          <div class="pfield"><label>Volunteer ID</label><input type="text" id="p-volid" readonly></div>
-          <div class="pfield"><label>Joined On</label><input type="text" id="p-joined" readonly></div>
+        <div class="profile-section-title">📅 Registration Details</div>
+        <div class="profile-field-row single">
+          <div class="pfield"><label>Volunteer ID</label><input type="text" id="prf-vol-id" readonly></div>
         </div>
         <div class="profile-field-row single">
-          <div class="pfield"><label>Account Status</label><input type="text" id="p-status" readonly value="Active Volunteer ✅"></div>
-        </div>
-
-        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="btn-sm btn-sm-save" style="padding:12px 28px;font-size:14px;" onclick="saveProfileChanges()">💾 Save Changes</button>
-          <button class="btn-sm btn-sm-danger" style="padding:12px 28px;font-size:14px;" onclick="logoutVolunteer()">🚪 Logout</button>
+          <div class="pfield"><label>Registration Date</label><input type="text" id="prf-reg-date" readonly></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     HIDDEN ID CARD TEMPLATE (for PDF)
-═══════════════════════════════════════════ -->
+<!-- ID CARD TEMPLATE -->
 <div id="id-card-template">
   <div class="id-card-inner">
     <div class="id-card-top">
-      <div class="id-card-logo">🌱</div>
+      <div class="id-card-logo">🌿</div>
       <div class="id-card-org">
-        <strong>My Lifeline Foundation</strong>
-        <span>Empowering Rural Odisha</span>
+        <strong>My Lifeline</strong>
+        <span>Foundation</span>
       </div>
+      <div class="id-card-vol-type">VOLUNTEER</div>
     </div>
-    <div class="id-card-vol-type">VOLUNTEER ID CARD</div>
     <div class="id-card-main">
-      <div id="idCardPhoto" class="id-card-photo-def">👤</div>
+      <div id="id-photo-container"></div>
       <div class="id-card-info">
-        <div class="id-card-name" id="idCardName">Volunteer Name</div>
+        <div class="id-card-name" id="id-card-name">Volunteer Name</div>
         <div class="id-card-detail">
-          <strong>Occupation:</strong> <span id="idCardOcc">-</span><br>
-          <strong>District:</strong> <span id="idCardDist">-</span><br>
-          <strong>State:</strong> <span id="idCardState">-</span><br>
-          <strong>Mobile:</strong> <span id="idCardMob">-</span><br>
-          <strong>Status:</strong> <span style="color:#86EFAC;">Active Volunteer</span>
+          <strong id="id-vol-id">MLF-OD-000001</strong><br>
+          📍 <strong id="id-district">District, State</strong>
         </div>
       </div>
     </div>
     <div class="id-card-footer">
-      <div>
-        <div class="id-card-id" id="idCardVolId">MLF-OD-000001</div>
-        <div style="font-size:8px;color:rgba(255,255,255,.5);margin-top:2px;">Reg: U85100OR2020NPL032868</div>
-      </div>
-      <div id="idCardQR" class="id-card-qr"></div>
+      <div class="id-card-id" id="id-card-footer-id">MLF-OD-000001</div>
+      <div id="id-qr-container"></div>
     </div>
   </div>
 </div>
 
-<!-- TOAST -->
+<!-- TOAST NOTIFICATION -->
 <div class="toast" id="toast"></div>
 
-<!-- ═══════════════════════════════════════════
-     JAVASCRIPT — FULL APP
-═══════════════════════════════════════════ -->
 <script>
-/* ─────────────────────────────────────────────
-   APP STATE & STORAGE
-───────────────────────────────────────────── */
-const DB = {
-  getVolunteers: () => JSON.parse(localStorage.getItem('mlf_volunteers') || '[]'),
-  saveVolunteers: (data) => localStorage.setItem('mlf_volunteers', JSON.stringify(data)),
-  getSession: () => localStorage.getItem('mlf_session'),
-  setSession: (id) => localStorage.setItem('mlf_session', id),
-  clearSession: () => localStorage.removeItem('mlf_session'),
-  getCounter: () => parseInt(localStorage.getItem('mlf_counter') || '0'),
-  incCounter: () => { const n = DB.getCounter() + 1; localStorage.setItem('mlf_counter', n); return n; }
-};
+// ═══════════════════════════════════════════
+// UTILITY FUNCTIONS
+// ═══════════════════════════════════════════
 
-function getCurrentVolunteer() {
-  const sid = DB.getSession();
-  if (!sid) return null;
-  return DB.getVolunteers().find(v => v.id === sid) || null;
+function openModal(modalId) {
+  document.getElementById(modalId).classList.add('open');
 }
 
-/* ─────────────────────────────────────────────
-   VOLUNTEER ID GENERATOR
-───────────────────────────────────────────── */
-function generateVolunteerId() {
-  const n = DB.incCounter();
-  return 'MLF-OD-' + String(n).padStart(6, '0');
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.remove('open');
 }
 
-/* ─────────────────────────────────────────────
-   NAV AUTH BUTTONS
-───────────────────────────────────────────── */
-function updateNav() {
-  const vol = getCurrentVolunteer();
-  const navAuth = document.getElementById('navAuthButtons');
-  const mobAuth = document.getElementById('mobAuthButtons');
-
-  if (vol) {
-    navAuth.innerHTML = `
-      <a class="nav-btn-profile" onclick="openProfile()">👤 My Profile</a>
-      <a class="nav-btn-donate" onclick="handleDonate()">❤️ Donate</a>
-      <a style="color:var(--gray);font-size:13px;padding:8px 10px;" onclick="logoutVolunteer()">Logout</a>
-    `;
-    mobAuth.innerHTML = `
-      <a onclick="openProfile();toggleMenu()" style="background:var(--blue);color:white;font-weight:700;border-radius:10px;">👤 My Profile</a>
-      <a onclick="handleDonate();toggleMenu()" style="background:var(--orange);color:white;font-weight:700;border-radius:10px;">❤️ Donate</a>
-      <a onclick="logoutVolunteer()" style="background:#ef4444;color:white;font-weight:700;border-radius:10px;">🚪 Logout</a>
-    `;
-  } else {
-    navAuth.innerHTML = `
-      <a class="nav-btn-login" onclick="openModal('modalLogin')">🔐 Login</a>
-      <a class="nav-btn-volunteer" onclick="handleVolunteerBtn()">🤝 Join Volunteer</a>
-      <a class="nav-btn-donate" onclick="handleDonate()">❤️ Donate</a>
-    `;
-    mobAuth.innerHTML = `
-      <a onclick="openModal('modalLogin');toggleMenu()">🔐 Login</a>
-      <a onclick="handleVolunteerBtn();toggleMenu()" style="background:var(--green);color:white;font-weight:700;border-radius:10px;">🤝 Join as Volunteer</a>
-      <a onclick="handleDonate();toggleMenu()" style="background:var(--orange);color:white;font-weight:700;border-radius:10px;">❤️ Donate Now</a>
-    `;
-  }
+function toggleMenu() {
+  document.getElementById('mobMenu').classList.toggle('open');
 }
 
-/* ─────────────────────────────────────────────
-   BUTTON ACTIONS
-───────────────────────────────────────────── */
-function handleVolunteerBtn() {
-  if (getCurrentVolunteer()) { openProfile(); }
-  else { openModal('modalRegister'); }
+function showToast(message, type = 'success') {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.className = `toast ${type} show`;
+  setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-function handleDonate() {
-  showToast('Redirecting to Donation Page... 💝', 'success');
-  // In production: window.location.href = '/donate';
+// ═══════════════════════════════════════════
+// CLOCK WIDGET
+// ═══════════════════════════════════════════
+
+const notices = [
+  { tag: 'WELCOME', text: '🎉 Welcome to My Lifeline Foundation!' },
+  { tag: 'PROGRAM', text: '📚 New education program starting next week.' },
+  { tag: 'EVENT', text: '🎪 Health camp on Saturday at Gula Nagar.' },
+  { tag: 'BIRTHDAY', text: '🎂 Celebrate with us! Monthly volunteer meetup.' },
+  { tag: 'RATING', text: '⭐ 500+ families uplifted. Join the movement!' }
+];
+
+function updateClock() {
+  const now = new Date();
+  document.getElementById('cwTime').textContent = now.toLocaleTimeString();
+  document.getElementById('cwDate').textContent = now.toLocaleDateString();
 }
 
-/* ─────────────────────────────────────────────
-   MODAL SYSTEM
-───────────────────────────────────────────── */
-function openModal(id) {
-  document.getElementById(id).classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(id) {
-  document.getElementById(id).classList.remove('open');
-  document.body.style.overflow = '';
+function setupNoticeRotation() {
+  const scroll = document.getElementById('cwScroll');
+  const dots = document.getElementById('cwDots');
+  
+  scroll.innerHTML = notices.map(n => `
+    <div class="cw-notice-item">
+      <span class="cw-notice-tag tag-${n.tag.toLowerCase()}">${n.tag}</span>
+      <div class="cw-notice-text">${n.text}</div>
+    </div>
+  `).join('');
+
+  dots.innerHTML = notices.map((_, i) => `<div class="cw-dot${i === 0 ? ' active' : ''}" onclick="rotateNotice(${i})"></div>`).join('');
+
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % notices.length;
+    document.querySelectorAll('.cw-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    scroll.style.transform = `translateY(-${current * 100}%)`;
+  }, 4000);
 }
 
-// Close on overlay click
-document.querySelectorAll('.modal-overlay').forEach(o => {
-  o.addEventListener('click', e => { if (e.target === o) closeModal(o.id); });
-});
+function rotateNotice(index) {
+  const scroll = document.getElementById('cwScroll');
+  const dots = document.querySelectorAll('.cw-dot');
+  dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  scroll.style.transform = `translateY(-${index * 100}%)`;
+}
 
-/* ─────────────────────────────────────────────
-   REGISTRATION
-───────────────────────────────────────────── */
+// ═══════════════════════════════════════════
+// FORM HANDLERS
+// ═══════════════════════════════════════════
+
 function toggleSubmit() {
-  const cb = document.getElementById('tcCheckbox');
-  document.getElementById('submitBtn').disabled = !cb.checked;
+  const checkbox = document.getElementById('tcCheckbox');
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = !checkbox.checked;
 }
 
 function submitRegistration(e) {
   e.preventDefault();
-  const aadhaar = document.getElementById('reg-aadhaar').value.trim();
-  const mobile = document.getElementById('reg-mobile').value.trim();
-
-  // Validation
-  if (aadhaar.length !== 12 || !/^\d+$/.test(aadhaar)) {
-    showToast('Please enter a valid 12-digit Aadhaar number', 'error'); return;
-  }
-  if (mobile.length !== 10 || !/^\d+$/.test(mobile)) {
-    showToast('Please enter a valid 10-digit mobile number', 'error'); return;
-  }
-  const pin = document.getElementById('reg-pin').value.trim();
-  if (pin.length !== 6 || !/^\d+$/.test(pin)) {
-    showToast('Please enter a valid 6-digit PIN code', 'error'); return;
-  }
-
-  // Check duplicate Aadhaar
-  const volunteers = DB.getVolunteers();
-  const aadhaarHash = aadhaar.slice(-4); // simplified check
-  const isDup = volunteers.some(v => v.aadhaarKey === aadhaar.substring(0,8) + aadhaar.slice(-4));
-  if (isDup) {
-    showToast('An account with this Aadhaar already exists!', 'error'); return;
-  }
-
-  const volId = generateVolunteerId();
-  const today = new Date().toISOString().split('T')[0];
-
-  const volunteer = {
-    id: volId,
-    name: document.getElementById('reg-name').value.trim(),
+  
+  const data = {
+    name: document.getElementById('reg-name').value,
     dob: document.getElementById('reg-dob').value,
-    fatherName: document.getElementById('reg-father').value.trim(),
-    motherName: document.getElementById('reg-mother').value.trim(),
-    occupation: document.getElementById('reg-occupation').value.trim(),
-    mobile: mobile,
-    aadhaarDisplay: '**** **** ' + aadhaar.slice(-4),
-    aadhaarKey: aadhaar.substring(0,8) + aadhaar.slice(-4), // security: partial key
-    at: document.getElementById('reg-at').value.trim(),
-    post: document.getElementById('reg-post').value.trim(),
-    ps: document.getElementById('reg-ps').value.trim(),
-    district: document.getElementById('reg-district').value.trim(),
+    father: document.getElementById('reg-father').value,
+    mother: document.getElementById('reg-mother').value,
+    occupation: document.getElementById('reg-occupation').value,
+    mobile: document.getElementById('reg-mobile').value,
+    aadhaar: document.getElementById('reg-aadhaar').value,
+    at: document.getElementById('reg-at').value,
+    post: document.getElementById('reg-post').value,
+    ps: document.getElementById('reg-ps').value,
+    district: document.getElementById('reg-district').value,
     state: document.getElementById('reg-state').value,
-    pin: pin,
-    joinDate: today,
-    status: 'Active',
-    photo: '',
-    rating: 0
+    pin: document.getElementById('reg-pin').value,
+    timestamp: new Date().toISOString()
   };
 
-  volunteers.push(volunteer);
-  DB.saveVolunteers(volunteers);
-  DB.setSession(volId);
+  // Generate unique volunteer ID
+  const volId = 'MLF-' + data.state.substring(0, 2).toUpperCase() + '-' + Math.random().toString().substring(2, 8);
+  
+  // Store in localStorage
+  const volunteers = JSON.parse(localStorage.getItem('volunteers') || '{}');
+  volunteers[volId] = { ...data, volId, registeredDate: new Date().toLocaleDateString() };
+  localStorage.setItem('volunteers', JSON.stringify(volunteers));
 
   closeModal('modalRegister');
+  showSuccessScreen(volId);
+}
+
+function showSuccessScreen(volId) {
+  alert(`✅ Registration Successful!\n\nYour Volunteer ID: ${volId}\n\nPlease save this ID for future login.`);
   document.getElementById('regForm').reset();
-  document.getElementById('tcCheckbox').checked = false;
-  document.getElementById('submitBtn').disabled = true;
-
-  // Show success
-  document.getElementById('successIdBadge').textContent = volId;
-  document.getElementById('successScreen').classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  updateNav();
-  buildNotices();
 }
 
-/* ─────────────────────────────────────────────
-   LOGIN
-───────────────────────────────────────────── */
 function submitLogin() {
-  const inputId = document.getElementById('login-id').value.trim().toUpperCase();
-  const inputMobile = document.getElementById('login-mobile').value.trim();
-
-  if (!inputId || !inputMobile) {
-    showToast('Please enter your Volunteer ID and Mobile Number', 'error'); return;
-  }
-
-  const volunteers = DB.getVolunteers();
-  const vol = volunteers.find(v => v.id === inputId && v.mobile === inputMobile);
-
-  if (!vol) {
-    showToast('Invalid Volunteer ID or Mobile Number', 'error'); return;
-  }
-
-  DB.setSession(vol.id);
-  closeModal('modalLogin');
-  document.getElementById('login-id').value = '';
-  document.getElementById('login-mobile').value = '';
-  updateNav();
-  showToast('Welcome back, ' + vol.name + '! 👋', 'success');
-  setTimeout(() => openProfile(), 800);
-}
-
-/* ─────────────────────────────────────────────
-   LOGOUT
-───────────────────────────────────────────── */
-function logoutVolunteer() {
-  DB.clearSession();
-  document.getElementById('profileDashboard').classList.remove('open');
-  document.body.style.overflow = '';
-  updateNav();
-  showToast('You have been logged out 👋', '');
-}
-
-/* ─────────────────────────────────────────────
-   SUCCESS → PROFILE
-───────────────────────────────────────────── */
-function gotoProfile() {
-  document.getElementById('successScreen').classList.remove('open');
-  document.body.style.overflow = '';
-  openProfile();
-}
-
-/* ─────────────────────────────────────────────
-   PROFILE DASHBOARD
-───────────────────────────────────────────── */
-function openProfile() {
-  const vol = getCurrentVolunteer();
-  if (!vol) { openModal('modalLogin'); return; }
-
-  // Populate fields
-  document.getElementById('p-name').value = vol.name || '';
-  document.getElementById('p-dob').value = vol.dob || '';
-  document.getElementById('p-father').value = vol.fatherName || '';
-  document.getElementById('p-mother').value = vol.motherName || '';
-  document.getElementById('p-occupation').value = vol.occupation || '';
-  document.getElementById('p-mobile').value = vol.mobile || '';
-  document.getElementById('p-aadhaar').value = vol.aadhaarDisplay || '';
-  document.getElementById('p-at').value = vol.at || '';
-  document.getElementById('p-post').value = vol.post || '';
-  document.getElementById('p-ps').value = vol.ps || '';
-  document.getElementById('p-district').value = vol.district || '';
-  document.getElementById('p-state').value = vol.state || '';
-  document.getElementById('p-pin').value = vol.pin || '';
-  document.getElementById('p-volid').value = vol.id || '';
-  document.getElementById('p-joined').value = formatDate(vol.joinDate);
-  document.getElementById('displayName').textContent = vol.name;
-  document.getElementById('displayVolId').textContent = vol.id;
-
-  // Photo
-  const photoEl = document.getElementById('profilePhotoDisplay');
-  if (vol.photo) {
-    photoEl.outerHTML = `<img src="${vol.photo}" class="profile-photo" id="profilePhotoDisplay" alt="Profile">`;
+  const volId = document.getElementById('login-id').value.toUpperCase();
+  const mobile = document.getElementById('login-mobile').value;
+  
+  const volunteers = JSON.parse(localStorage.getItem('volunteers') || '{}');
+  
+  if (volunteers[volId] && volunteers[volId].mobile === mobile) {
+    closeModal('modalLogin');
+    loadProfile(volId);
+    document.getElementById('profileDash').classList.add('open');
   } else {
-    if (photoEl.tagName === 'IMG') {
-      photoEl.outerHTML = `<div class="profile-photo-default" id="profilePhotoDisplay">👤</div>`;
-    }
-    document.getElementById('profilePhotoDisplay').textContent = '👤';
+    showToast('❌ Invalid Volunteer ID or Mobile Number', 'error');
   }
-
-  // Generate QR
-  const qrDiv = document.getElementById('profile-qr-code');
-  qrDiv.innerHTML = '';
-  const qrData = `${window.location.href.split('?')[0]}?volunteer=${vol.id}`;
-  try {
-    new QRCode(qrDiv, { text: qrData, width: 120, height: 120, colorDark:'#073A6B', colorLight:'#ffffff', correctLevel: QRCode.CorrectLevel.M });
-  } catch(e) {}
-
-  document.getElementById('profileDashboard').classList.add('open');
-  document.body.style.overflow = 'hidden';
 }
 
-function saveProfileChanges() {
-  const vol = getCurrentVolunteer();
-  if (!vol) return;
-  const volunteers = DB.getVolunteers();
-  const idx = volunteers.findIndex(v => v.id === vol.id);
-  if (idx === -1) return;
+// ═══════════════════════════════════════════
+// PROFILE FUNCTIONS
+// ═══════════════════════════════════════════
 
-  volunteers[idx].name = document.getElementById('p-name').value.trim();
-  volunteers[idx].dob = document.getElementById('p-dob').value;
-  volunteers[idx].fatherName = document.getElementById('p-father').value.trim();
-  volunteers[idx].motherName = document.getElementById('p-mother').value.trim();
-  volunteers[idx].occupation = document.getElementById('p-occupation').value.trim();
-  volunteers[idx].mobile = document.getElementById('p-mobile').value.trim();
-  volunteers[idx].at = document.getElementById('p-at').value.trim();
-  volunteers[idx].post = document.getElementById('p-post').value.trim();
-  volunteers[idx].ps = document.getElementById('p-ps').value.trim();
-  volunteers[idx].district = document.getElementById('p-district').value.trim();
-  volunteers[idx].state = document.getElementById('p-state').value;
-  volunteers[idx].pin = document.getElementById('p-pin').value.trim();
+let currentVolId = null;
 
-  DB.saveVolunteers(volunteers);
-  document.getElementById('displayName').textContent = volunteers[idx].name;
-  showToast('Profile updated successfully! ✅', 'success');
-  buildNotices();
-}
-
-/* ─────────────────────────────────────────────
-   PHOTO UPLOAD
-───────────────────────────────────────────── */
-function handlePhotoUpload(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  if (file.size > 2 * 1024 * 1024) { showToast('Image must be under 2MB', 'error'); return; }
-
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    const base64 = e.target.result;
-    // Save to volunteer
-    const vol = getCurrentVolunteer();
-    if (!vol) return;
-    const volunteers = DB.getVolunteers();
-    const idx = volunteers.findIndex(v => v.id === vol.id);
-    if (idx > -1) { volunteers[idx].photo = base64; DB.saveVolunteers(volunteers); }
-
-    // Update display
-    const wrap = document.querySelector('.profile-photo-wrap');
-    const oldEl = document.getElementById('profilePhotoDisplay');
-    const newImg = document.createElement('img');
-    newImg.src = base64;
-    newImg.className = 'profile-photo';
-    newImg.id = 'profilePhotoDisplay';
-    newImg.alt = 'Profile';
-    oldEl.replaceWith(newImg);
-    showToast('Profile photo updated! 📷', 'success');
-  };
-  reader.readAsDataURL(file);
-}
-
-/* ─────────────────────────────────────────────
-   DOWNLOAD ID CARD (PDF)
-───────────────────────────────────────────── */
-async function downloadIDCard() {
-  const vol = getCurrentVolunteer();
+function loadProfile(volId) {
+  currentVolId = volId;
+  const volunteers = JSON.parse(localStorage.getItem('volunteers') || '{}');
+  const vol = volunteers[volId];
+  
   if (!vol) return;
 
-  showToast('Preparing your ID Card... ⏳', '');
+  document.getElementById('profileName').textContent = vol.name;
+  document.getElementById('profileID').textContent = volId;
+  
+  document.getElementById('prf-name').value = vol.name;
+  document.getElementById('prf-dob').value = vol.dob;
+  document.getElementById('prf-father').value = vol.father;
+  document.getElementById('prf-mother').value = vol.mother;
+  document.getElementById('prf-occupation').value = vol.occupation;
+  document.getElementById('prf-mobile').value = vol.mobile;
+  document.getElementById('prf-aadhaar').value = 'XXXX XXXX ' + vol.aadhaar.slice(-4);
+  document.getElementById('prf-at').value = vol.at;
+  document.getElementById('prf-post').value = vol.post;
+  document.getElementById('prf-ps').value = vol.ps;
+  document.getElementById('prf-district').value = vol.district;
+  document.getElementById('prf-state').value = vol.state;
+  document.getElementById('prf-pin').value = vol.pin;
+  document.getElementById('prf-vol-id').value = volId;
+  document.getElementById('prf-reg-date').value = vol.registeredDate;
 
-  // Populate template
-  document.getElementById('idCardName').textContent = vol.name;
-  document.getElementById('idCardOcc').textContent = vol.occupation;
-  document.getElementById('idCardDist').textContent = vol.district;
-  document.getElementById('idCardState').textContent = vol.state;
-  document.getElementById('idCardMob').textContent = vol.mobile;
-  document.getElementById('idCardVolId').textContent = vol.id;
-
-  // Photo
-  const photoEl = document.getElementById('idCardPhoto');
-  if (vol.photo) {
-    photoEl.outerHTML = `<img src="${vol.photo}" class="id-card-photo" id="idCardPhoto" alt="Photo">`;
-  } else {
-    if (document.getElementById('idCardPhoto').tagName === 'IMG') {
-      document.getElementById('idCardPhoto').outerHTML = `<div class="id-card-photo-def" id="idCardPhoto">👤</div>`;
-    }
-  }
-
-  // QR for ID card
-  const idCardQR = document.getElementById('idCardQR');
-  idCardQR.innerHTML = '';
-  const qrData = window.location.href.split('?')[0] + '?volunteer=' + vol.id;
-  try {
-    new QRCode(idCardQR, { text: qrData, width: 50, height: 50, colorDark:'#FFFFFF', colorLight:'transparent', correctLevel: QRCode.CorrectLevel.L });
-  } catch(e) {}
-
-  await new Promise(r => setTimeout(r, 600));
-
-  const card = document.getElementById('id-card-template');
-  card.style.left = '0'; card.style.top = '0'; card.style.position = 'fixed'; card.style.zIndex = '-1';
-
-  try {
-    const canvas = await html2canvas(card, { scale: 3, backgroundColor: null, useCORS: true });
-    const imgData = canvas.toDataURL('image/png');
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: [90, 55] });
-    pdf.addImage(imgData, 'PNG', 0, 0, 90, 55);
-    pdf.save(`MLF-Volunteer-ID-${vol.id}.pdf`);
-    showToast('ID Card downloaded! 📄', 'success');
-  } catch(err) {
-    showToast('Download failed. Try again.', 'error');
-  }
-
-  card.style.left = '-9999px'; card.style.top = '-9999px';
-  card.style.position = 'fixed'; card.style.zIndex = '';
+  generateQRCode(volId);
 }
 
-/* ─────────────────────────────────────────────
-   QR PUBLIC PROFILE VIEWER
-───────────────────────────────────────────── */
-function showQRProfile(volId) {
-  const volunteers = DB.getVolunteers();
-  const vol = volunteers.find(v => v.id === volId);
+function generateQRCode(volId) {
+  const qrContainer = document.getElementById('profile-qr-code');
+  qrContainer.innerHTML = '';
+  new QRCode(qrContainer, {
+    text: `MLF Volunteer: ${volId}`,
+    width: 150,
+    height: 150
+  });
+}
+
+function showQRProfile() {
+  const volunteers = JSON.parse(localStorage.getItem('volunteers') || '{}');
+  const vol = volunteers[currentVolId];
+  
+  if (vol) {
+    document.getElementById('qrPublicName').textContent = vol.name;
+    document.getElementById('qrPublicId').textContent = currentVolId;
+    document.getElementById('qrPublicDistrict').textContent = vol.district;
+    document.getElementById('qrPublicState').textContent = vol.state;
+    
+    const photoDisplay = document.getElementById('qrPublicPhoto');
+    photoDisplay.innerHTML = '<div class="qr-profile-photo-def">👤</div>';
+    
+    openModal('modalQRProfile');
+  }
+}
+
+function downloadIDCard() {
+  const volunteers = JSON.parse(localStorage.getItem('volunteers') || '{}');
+  const vol = volunteers[currentVolId];
+  
   if (!vol) return;
 
-  document.getElementById('qrPublicName').textContent = vol.name;
-  document.getElementById('qrPublicId').textContent = vol.id;
-  document.getElementById('qrPublicDistrict').textContent = vol.district;
-  document.getElementById('qrPublicState').textContent = vol.state;
+  const template = document.getElementById('id-card-template');
+  document.getElementById('id-card-name').textContent = vol.name;
+  document.getElementById('id-vol-id').textContent = currentVolId;
+  document.getElementById('id-district').textContent = `${vol.district}, ${vol.state}`;
+  document.getElementById('id-card-footer-id').textContent = currentVolId;
 
-  const photoDiv = document.getElementById('qrPublicPhoto');
-  if (vol.photo) {
-    photoDiv.innerHTML = `<img src="${vol.photo}" class="qr-profile-photo" alt="${vol.name}">`;
-  } else {
-    photoDiv.innerHTML = `<div class="qr-profile-photo-def">👤</div>`;
-  }
+  const photoContainer = document.getElementById('id-photo-container');
+  photoContainer.innerHTML = '<div class="id-card-photo-def">👤</div>';
 
-  openModal('modalQRProfile');
-}
-
-// Check URL param for QR profile on load
-function checkQRParam() {
-  const params = new URLSearchParams(window.location.search);
-  const volParam = params.get('volunteer');
-  if (volParam) { setTimeout(() => showQRProfile(volParam.toUpperCase()), 500); }
-}
-
-/* ─────────────────────────────────────────────
-   LIVE CLOCK
-───────────────────────────────────────────── */
-function startClock() {
-  function tick() {
-    const now = new Date();
-    const hh = String(now.getHours()).padStart(2,'0');
-    const mm = String(now.getMinutes()).padStart(2,'0');
-    const ss = String(now.getSeconds()).padStart(2,'0');
-    document.getElementById('cwTime').textContent = `${hh}:${mm}:${ss}`;
-
-    const dd = String(now.getDate()).padStart(2,'0');
-    const mo = String(now.getMonth()+1).padStart(2,'0');
-    const yyyy = now.getFullYear();
-    document.getElementById('cwDate').textContent = `${dd}/${mo}/${yyyy}`;
-  }
-  tick();
-  setInterval(tick, 1000);
-}
-
-/* ===========================
-   NOTICE & WISHES SYSTEM
-=========================== */
-
-let noticeIdx = 0;
-let noticeTimer = null;
-let notices = [];
-
-/* ---------- AUTO DATE BASED WISHES (ODISHA + NATIONAL) ---------- */
-const AUTO_WISHES = [
-  { m:1, d:26, text:"🇮🇳 ଗଣତନ୍ତ୍ର ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା – My Lifeline Foundation" },
-  { m:3, d:8,  text:"🌸 International Women's Day – ନାରୀଶକ୍ତିକୁ ସଲାମ" },
-  { m:8, d:15, text:"🇮🇳 ସ୍ୱାଧୀନତା ଦିବସର ଶୁଭେଚ୍ଛା" },
-  { m:9, d:1,  text:"🌾 ନୁଆଖାଇ ଜୁହାର – My Lifeline Foundation" },
-  { m:10,d:2,  text:"🙏 Gandhi Jayanti – ଶ୍ରଦ୍ଧାଞ୍ଜଳି" }
-];
-
-/* ---------- MANUAL WISHES (ADMIN ADD ANYTIME) ---------- */
-const MANUAL_WISHES = [
-  { text:"🕊️ ଶ୍ରଦ୍ଧାଞ୍ଜଳି – Late Ramesh Panda" },
-  { text:"🎉 Jayanti Wishes – Netaji Subhash Chandra Bose" }
-];
-
-/* ---------- FOUNDATION NOTICES ---------- */
-const FOUNDATION_NOTICES = [
-  "📢 Free Health Camp – Kendrapara",
-  "📢 Education Drive – Registration Open",
-  "📢 Youth Skill Training – Batch 4 Enrolling"
-];
-
-/* ---------- BUILD ALL NOTICES ---------- */
-function buildNotices() {
-
-  notices = [];
-  const today = new Date();
-  const m = today.getMonth()+1;
-  const d = today.getDate();
-
-  /* Auto Festival Wishes */
-  AUTO_WISHES.forEach(w=>{
-    if(w.m===m && w.d===d){
-      notices.push({
-        tag:'event',
-        label:'🎉 Wishes',
-        text:w.text
-      });
-    }
+  const qrContainer = document.getElementById('id-qr-container');
+  qrContainer.innerHTML = '';
+  new QRCode(qrContainer, {
+    text: `MLF Volunteer: ${currentVolId}`,
+    width: 50,
+    height: 50
   });
 
-  /* Manual Wishes */
-  MANUAL_WISHES.forEach(w=>{
-    notices.push({
-      tag:'event',
-      label:'📌 Update',
-      text:w.text
+  setTimeout(() => {
+    html2canvas(template, { scale: 3, useCORS: true }).then(canvas => {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL();
+      link.download = `MLF-${currentVolId}-ID.png`;
+      link.click();
+      showToast('📥 ID Card downloaded!', 'success');
     });
-  });
+  }, 500);
+}
 
-  /* Foundation Notices */
-  FOUNDATION_NOTICES.forEach(n=>{
-    notices.push({
-      tag:'program',
-      label:'📢 Notice',
-      text:n
-    });
-  });
+function triggerPhotoUpload() {
+  document.getElementById('photoUploadInput').click();
+}
 
-  /* Volunteer Birthday (if DB exists) */
-  if(typeof DB !== "undefined"){
-    const volunteers = DB.getVolunteers();
-    const todayMMDD = `${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+document.getElementById('photoUploadInput')?.addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      document.getElementById('profilePhotoDisplay').style.backgroundImage = `url(${event.target.result})`;
+      document.getElementById('profilePhotoDisplay').style.backgroundSize = 'cover';
+      document.getElementById('profilePhotoDisplay').textContent = '';
+    };
+    reader.readAsDataURL(file);
+  }
+});
 
-    volunteers.forEach(v=>{
-      if(v.dob && v.dob.substring(5)===todayMMDD){
-        notices.unshift({
-          tag:'birthday',
-          label:'🎂 Birthday',
-          text:`Happy Birthday ${v.name}! Best wishes from My Lifeline Foundation`
-        });
+function logoutProfile() {
+  document.getElementById('profileDash').classList.remove('open');
+  currentVolId = null;
+  showToast('👋 Logged out successfully', 'success');
+}
+
+// ═══════════════════════════════════════════
+// BUTTON HANDLERS
+// ═══════════════════════════════════════════
+
+function handleDonate() {
+  openModal('modalRegister');
+  showToast('💳 Donation gateway coming soon!', 'success');
+}
+
+function handleVolunteerBtn() {
+  openModal('modalLogin');
+}
+
+// ═══════════════════════════════════════════
+// INITIALIZATION & SCROLL EFFECTS
+// ═══════════════════════════════════════════
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateClock();
+  setInterval(updateClock, 1000);
+  setupNoticeRotation();
+
+  // Scroll effects
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
+  }, { threshold: 0.1 });
+
+  revealElements.forEach(el => observer.observe(el));
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    const clockWidget = document.getElementById('clockWidget');
+    
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      clockWidget?.classList.add('hero-hidden');
+    } else {
+      navbar.classList.remove('scrolled');
+      clockWidget?.classList.remove('hero-hidden');
+    }
+  });
+
+  // Auth buttons
+  updateAuthButtons();
+});
+
+function updateAuthButtons() {
+  const isLoggedIn = currentVolId;
+  const navAuthButtons = document.getElementById('navAuthButtons');
+  const mobAuthButtons = document.getElementById('mobAuthButtons');
+
+  if (isLoggedIn) {
+    navAuthButtons.innerHTML = `<button class="nav-links nav-btn-profile" onclick="document.getElementById('profileDash').classList.add('open')">👤 My Profile</button><button class="nav-links nav-btn-login" onclick="logoutProfile()">Logout</button>`;
+    mobAuthButtons.innerHTML = `<button class="nav-links nav-btn-profile" onclick="document.getElementById('profileDash').classList.add('open')">👤 My Profile</button><button class="nav-links nav-btn-login" onclick="logoutProfile()">Logout</button>`;
+  } else {
+    navAuthButtons.innerHTML = `<button class="nav-links nav-btn-login" onclick="openModal('modalLogin')">🔐 Login</button><button class="nav-links nav-btn-volunteer" onclick="openModal('modalLogin')">🤝 Register</button><button class="nav-links nav-btn-donate" onclick="handleDonate()">❤️ Donate</button>`;
+    mobAuthButtons.innerHTML = `<button class="nav-links nav-btn-login" onclick="openModal('modalLogin')">🔐 Login</button><button class="nav-links nav-btn-volunteer" onclick="openModal('modalLogin')">🤝 Register</button><button class="nav-links nav-btn-donate" onclick="handleDonate()">❤️ Donate</button>`;
   }
-
-  renderNotices();
 }
 
-/* ---------- RENDER ---------- */
-function renderNotices(){
-  if(notices.length===0) return;
-
-  const scroll = document.getElementById("cwScroll");
-  const dots   = document.getElementById("cwDots");
-
-  scroll.innerHTML = notices.map(n=>`
-    <div class="cw-notice-item">
-      <span class="cw-notice-tag tag-${n.tag}">${n.label}</span>
-      <div class="cw-notice-text">${n.text}</div>
-    </div>
-  `).join("");
-
-  dots.innerHTML = notices.map((_,i)=>
-    `<div class="cw-dot ${i===0?'active':''}" onclick="goNotice(${i})"></div>`
-  ).join("");
-
-  noticeIdx = 0;
-  if(noticeTimer) clearInterval(noticeTimer);
-  noticeTimer = setInterval(nextNotice, 6000);   // slower speed
-}
-
-/* ---------- CONTROLS ---------- */
-function nextNotice(){
-  noticeIdx = (noticeIdx+1)%notices.length;
-  updateNoticeScroll();
-}
-
-function goNotice(i){
-  noticeIdx = i;
-  updateNoticeScroll();
-}
-
-function updateNoticeScroll(){
-  const scroll = document.getElementById("cwScroll");
-  scroll.style.transform = `translateY(-${noticeIdx*72}px)`;
-  document.querySelectorAll(".cw-dot")
-    .forEach((d,i)=>d.classList.toggle("active",i===noticeIdx));
-}
-
-/* ---------- START ---------- */
-document.addEventListener("DOMContentLoaded", startClock);
-document.addEventListener("DOMContentLoaded", buildNotices);
-}
-
-// Hide clock widget when scrolled past hero
-function handleClockVisibility() {
-  const widget = document.getElementById('clockWidget');
-  widget.classList.toggle('hero-hidden', window.scrollY > window.innerHeight * 0.7);
-}
-
-/* ─────────────────────────────────────────────
-   IMPACT COUNTERS
-───────────────────────────────────────────── */
-function startCounter(el, target) {
-  let cur = 0; const step = target / 80;
-  const tick = () => { cur = Math.min(cur+step, target); el.childNodes[0].textContent = Math.floor(cur).toLocaleString('en-IN'); if(cur<target) requestAnimationFrame(tick); };
-  requestAnimationFrame(tick);
-}
-const cntObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ startCounter(e.target, parseInt(e.target.dataset.target)); cntObs.unobserve(e.target); }});
-}, {threshold:.5});
-document.querySelectorAll('.imp-num[data-target]').forEach(el => cntObs.observe(el));
-
-/* ─────────────────────────────────────────────
-   SCROLL REVEAL
-───────────────────────────────────────────── */
-const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:.1});
-document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
-
-/* ─────────────────────────────────────────────
-   TOAST NOTIFICATIONS
-───────────────────────────────────────────── */
-let toastTimer;
-function showToast(msg, type) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = `toast ${type}`;
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-/* ─────────────────────────────────────────────
-   NAVBAR
-───────────────────────────────────────────── */
-function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  handleClockVisibility();
-});
-document.addEventListener('click', e => {
-  const menu = document.getElementById('mobMenu');
-  if (menu.classList.contains('open') && !menu.contains(e.target) && !document.querySelector('.hamburger').contains(e.target))
-    menu.classList.remove('open');
+// Close modals on background click
+document.querySelectorAll('.modal-overlay').forEach(modal => {
+  modal.addEventListener('click', function(e) {
+    if (e.target === this) closeModal(this.id);
+  });
 });
 
-/* ─────────────────────────────────────────────
-   UTILS
-───────────────────────────────────────────── */
-function formatDate(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
-  return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
-}
-
-/* ─────────────────────────────────────────────
-   INIT
-───────────────────────────────────────────── */
-window.addEventListener('DOMContentLoaded', () => {
-  startClock();
-  buildNotices();
-  updateNav();
-  checkQRParam();
+document.getElementById('profileDash')?.addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('open');
 });
 </script>
 </body>
