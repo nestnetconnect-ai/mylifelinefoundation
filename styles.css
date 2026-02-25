@@ -1,3 +1,13 @@
 .nav-links { display: flex; align-items: center; }
 
 .nav-links button { height: 40px; padding: 0 15px; margin: 0 5px; }
+/* NOTICE BOX HEIGHT & CENTER FIX */
+.notice-box,
+.program-card,
+.upcoming-notice {
+    min-height: 320px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
