@@ -642,6 +642,28 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
   .imp-grid{grid-template-columns:1fr 1fr;}
   .clock-widget{display:none;}
 }
+  @media (max-width: 768px){
+
+.hero{
+    min-height: 85vh;
+    padding-top: 90px;
+}
+
+.hero-wrap{
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+.hero-txt h1{
+    font-size: 32px;
+}
+
+.hero-txt p{
+    font-size: 14px;
+}
+
+}
 </style>
 </head>
 <body>
@@ -989,7 +1011,7 @@ footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
         <span>🗺️ <strong id="qrPublicState">State</strong></span>
       </div>
       <div class="qr-org-badge">
-        🌱 My Lifeline Foundation<br>
+         My Lifeline Foundation<br>
         <span style="font-size:10px;">Reg. No: U85100OR2020NPL032868 | Section 8 NGO</span>
       </div>
       <button class="btn-blue-full" style="margin-top:16px;" onclick="closeModal('modalQRProfile')">Close</button>
