@@ -1,3 +1,21 @@
 .nav-links { display: flex; align-items: center; }
 
 .nav-links button { height: 40px; padding: 0 15px; margin: 0 5px; }
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
