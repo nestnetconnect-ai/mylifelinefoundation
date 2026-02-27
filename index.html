@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="My Lifeline Foundation – Transforming Lives Through Education, Health and Rural Development in Odisha." />
+  <title>My Lifeline Foundation | Transforming Lives</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NOTICE WIDGET ===================== -->
+  <div id="notice-widget" class="notice-widget" aria-live="polite">
+    <div class="notice-clock-block">
+      <span id="notice-time" class="notice-time">00:00:00</span>
+      <span id="notice-date" class="notice-date">01/01/2026</span>
+    </div>
+    <div class="notice-body">
+      <span class="notice-pill">NOTICE</span>
+      <div class="notice-scroll-box">
+        <span id="notice-text" class="notice-text">Loading notices...</span>
+      </div>
+    </div>
+    <button id="notice-toggle" class="notice-toggle" aria-label="Toggle notice widget">&#9660;</button>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-logo" aria-label="My Lifeline Foundation Home">
+        <img src="assets/images/logo.png" alt="MLF Logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">My Lifeline</span>
+          <span class="nav-logo-sub">Foundation</span>
+        </div>
+      </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="menu">
+        <li role="none"><a href="#home" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about" role="menuitem">About</a></li>
+        <li role="none"><a href="#programs" role="menuitem">Programs</a></li>
+        <li role="none"><a href="#impact" role="menuitem">Impact</a></li>
+        <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+        <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        <li role="none"><a href="#volunteer-section" class="btn btn-nav" role="menuitem">Volunteer Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="home">
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-fade-up" style="animation-delay:0.1s">Est. 2018 &bull; Odisha, India</div>
+      <h1 class="hero-title animate-fade-up" style="animation-delay:0.25s">
+        Every Life Deserves<br />
+        <span class="accent">A Lifeline.</span>
+      </h1>
+      <p class="hero-sub animate-fade-up" style="animation-delay:0.4s">
+        Empowering communities through education, healthcare,<br class="desktop-only" />
+        and rural development — one step, one life at a time.
+      </p>
+      <div class="hero-cta animate-fade-up" style="animation-delay:0.55s">
+        <a href="#volunteer-section" class="btn btn-primary">Join as Volunteer</a>
+        <a href="#contact" class="btn btn-outline">Donate Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">About <span class="accent">My Lifeline Foundation</span></h2>
+        <p class="section-desc">A grassroots non-profit committed to lasting change in Odisha's most underserved communities.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text-col reveal">
+          <div class="about-block">
+            <div class="about-icon-box">&#128065;</div>
+            <div>
+              <h3>Our Vision</h3>
+              <p>A society where every individual — regardless of geography or circumstance — has equal access to education, health, and opportunity to thrive.</p>
+            </div>
+          </div>
+          <div class="about-block">
+            <div class="about-icon-box">&#127919;</div>
+            <div>
+              <h3>Our Mission</h3>
+              <p>To mobilise compassionate youth volunteers and strategic partnerships to deliver measurable, sustainable impact at the grassroots level across Odisha.</p>
+            </div>
+          </div>
+          <div class="about-stat-row">
+            <div class="about-stat"><span>7+</span><small>Years Active</small></div>
+            <div class="about-stat"><span>30</span><small>Districts</small></div>
+            <div class="about-stat"><span>100%</span><small>Volunteer-Led</small></div>
+          </div>
+        </div>
+        <div class="values-col reveal">
+          <h3 class="values-heading">Core Values</h3>
+          <div class="value-card">
+            <div class="value-num">01</div>
+            <div class="value-body">
+              <h4>Compassion</h4>
+              <p>We lead with empathy, placing human dignity at the centre of every action we take.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-num">02</div>
+            <div class="value-body">
+              <h4>Integrity</h4>
+              <p>Transparency and accountability in every rupee we receive and every resource we deploy.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-num">03</div>
+            <div class="value-body">
+              <h4>Impact</h4>
+              <p>Results-driven work with a focus on long-term community transformation over quick fixes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROGRAMS SECTION ===================== -->
+  <section class="section programs-section" id="programs">
+    <div class="programs-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-title">Our Core <span class="accent">Programs</span></h2>
+        <p class="section-desc">Three verticals. One unified mission — uplift Odisha's forgotten corners.</p>
+      </div>
+      <div class="programs-grid">
+        <div class="program-card reveal">
+          <div class="program-num-badge">01</div>
+          <div class="program-icon-wrap">&#128218;</div>
+          <h3>Education</h3>
+          <p>Free tutoring centres, scholarship drives, digital literacy camps, and school supply distributions across 14 districts.</p>
+          <ul class="program-list">
+            <li>After-school learning centres</li>
+            <li>Merit scholarships for students</li>
+            <li>Digital literacy workshops</li>
+            <li>Library &amp; Book Donation Drive</li>
+          </ul>
+          <div class="program-footer">1,200+ students benefited</div>
+        </div>
+        <div class="program-card program-card--featured reveal">
+          <div class="program-featured-tag">Core Focus</div>
+          <div class="program-num-badge">02</div>
+          <div class="program-icon-wrap">&#129657;</div>
+          <h3>Health</h3>
+          <p>Free medical camps, blood donation drives, mental health awareness, and hygiene kit distributions in rural blocks.</p>
+          <ul class="program-list">
+            <li>Free medical &amp; dental camps</li>
+            <li>Blood donation drives</li>
+            <li>Maternal health awareness</li>
+            <li>Mental health sensitization</li>
+          </ul>
+          <div class="program-footer">8,500+ patients served</div>
+        </div>
+        <div class="program-card reveal">
+          <div class="program-num-badge">03</div>
+          <div class="program-icon-wrap">&#127807;</div>
+          <h3>Rural Development</h3>
+          <p>Livelihood training, women empowerment SHGs, clean water initiatives, and sustainable agriculture support.</p>
+          <ul class="program-list">
+            <li>Skill &amp; vocational training</li>
+            <li>Women self-help groups</li>
+            <li>Clean water &amp; sanitation</li>
+            <li>Sustainable farming support</li>
+          </ul>
+          <div class="program-footer">340+ families supported</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMPACT SECTION ===================== -->
+  <section class="section impact-section" id="impact">
+    <div class="impact-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-tag section-tag--light">Our Numbers</span>
+        <h2 class="section-title section-title--light">Impact That <span class="accent-light">Speaks</span></h2>
+        <p class="section-desc section-desc--light">Seven years of relentless work, reflected in numbers that matter.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-icon">&#128100;</div>
+          <div class="impact-num-wrap">
+            <span class="count-up" data-target="1200">0</span>
+            <span class="impact-plus">+</span>
+          </div>
+          <div class="impact-label">Active Volunteers</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">&#129352;</div>
+          <div class="impact-num-wrap">
+            <span class="count-up" data-target="45000">0</span>
+            <span class="impact-plus">+</span>
+          </div>
+          <div class="impact-label">Lives Impacted</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">&#127881;</div>
+          <div class="impact-num-wrap">
+            <span class="count-up" data-target="320">0</span>
+            <span class="impact-plus">+</span>
+          </div>
+          <div class="impact-label">Events Conducted</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">&#127979;</div>
+          <div class="impact-num-wrap">
+            <span class="count-up" data-target="28">0</span>
+          </div>
+          <div class="impact-label">Districts Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY SECTION ===================== -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Moments</span>
+        <h2 class="section-title">Our <span class="accent">Gallery</span></h2>
+        <p class="section-desc">Glimpses of the lives we touch and the smiles we create.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <div class="gallery-item" data-src="assets/images/gallery/g1.jpg" data-caption="Education Camp – Koraput, 2025">
+          <img src="assets/images/gallery/g1.jpg" alt="Education Camp Koraput" loading="lazy" />
+          <div class="gallery-hover">
+            <span class="gallery-zoom">&#128269;</span>
+            <p>Education Camp – Koraput, 2025</p>
+          </div>
+        </div>
+        <div class="gallery-item gallery-item--wide" data-src="assets/images/gallery/g2.jpg" data-caption="Free Medical Camp – Rayagada, 2025">
+          <img src="assets/images/gallery/g2.jpg" alt="Free Medical Camp Rayagada" loading="lazy" />
+          <div class="gallery-hover">
+            <span class="gallery-zoom">&#128269;</span>
+            <p>Free Medical Camp – Rayagada, 2025</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-src="assets/images/gallery/g3.jpg" data-caption="Volunteer Induction – Bhubaneswar, 2024">
+          <img src="assets/images/gallery/g3.jpg" alt="Volunteer Induction Bhubaneswar" loading="lazy" />
+          <div class="gallery-hover">
+            <span class="gallery-zoom">&#128269;</span>
+            <p>Volunteer Induction – Bhubaneswar, 2024</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-src="assets/images/gallery/g4.jpg" data-caption="Women SHG Training – Bolangir, 2025">
+          <img src="assets/images/gallery/g4.jpg" alt="Women SHG Training Bolangir" loading="lazy" />
+          <div class="gallery-hover">
+            <span class="gallery-zoom">&#128269;</span>
+            <p>Women SHG Training – Bolangir, 2025</p>
+          </div>
+        </div>
+        <div class="gallery-item gallery-item--tall" data-src="assets/images/gallery/g5.jpg" data-caption="Blood Donation Drive – Cuttack, 2025">
+          <img src="assets/images/gallery/g5.jpg" alt="Blood Donation Drive Cuttack" loading="lazy" />
+          <div class="gallery-hover">
+            <span class="gallery-zoom">&#128269;</span>
+            <p>Blood Donation Drive – Cuttack, 2025</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-src="assets/images/gallery/g6.jpg" data-caption="Tree Plantation – Sambalpur, 2024">
+          <img src="assets/images/gallery/g6.jpg" alt="Tree Plantation Sambalpur" loading="lazy" />
+          <div class="gallery-hover">
+            <span class="gallery-zoom">&#128269;</span>
+            <p>Tree Plantation – Sambalpur, 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY MODAL ===================== -->
+  <div class="modal-overlay" id="gallery-modal" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+    <div class="modal-box" role="document">
+      <button class="modal-close" id="modal-close" aria-label="Close gallery">&times;</button>
+      <img id="modal-img" src="" alt="" />
+      <p id="modal-caption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- ===================== VOLUNTEER SECTION ===================== -->
+  <section class="section volunteer-section" id="volunteer-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Volunteer Portal</span>
+        <h2 class="section-title">Join <span class="accent">Our Movement</span></h2>
+        <p class="section-desc">Register as a certified volunteer, get your digital ID, and be part of something meaningful.</p>
+      </div>
+
+      <div class="vol-tabs" role="tablist">
+        <button class="vol-tab active" data-tab="register" role="tab" aria-selected="true" aria-controls="tab-register">Register</button>
+        <button class="vol-tab" data-tab="login" role="tab" aria-selected="false" aria-controls="tab-login">Login</button>
+        <button class="vol-tab" data-tab="dashboard" role="tab" aria-selected="false" aria-controls="tab-dashboard" id="dashboard-tab" style="display:none">My Dashboard</button>
+      </div>
+
+      <!-- REGISTER TAB -->
+      <div class="vol-panel active" id="tab-register" role="tabpanel">
+        <form class="vol-form" id="vol-register-form" novalidate autocomplete="off">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="reg-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="reg-name" name="name" placeholder="Enter your full name" required autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="reg-dob">Date of Birth <span class="req">*</span></label>
+              <input type="date" id="reg-dob" name="dob" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-mobile">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="reg-mobile" name="mobile" placeholder="10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="reg-email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-district">District <span class="req">*</span></label>
+              <select id="reg-district" name="district" required>
+                <option value="">Select District</option>
+                <option>Angul</option><option>Balangir</option><option>Balasore</option>
+                <option>Bargarh</option><option>Bhadrak</option><option>Boudh</option>
+                <option>Cuttack</option><option>Deogarh</option><option>Dhenkanal</option>
+                <option>Gajapati</option><option>Ganjam</option><option>Jagatsinghpur</option>
+                <option>Jajpur</option><option>Jharsuguda</option><option>Kalahandi</option>
+                <option>Kandhamal</option><option>Kendrapara</option><option>Kendujhar</option>
+                <option>Khordha</option><option>Koraput</option><option>Malkangiri</option>
+                <option>Mayurbhanj</option><option>Nabarangpur</option><option>Nayagarh</option>
+                <option>Nuapada</option><option>Puri</option><option>Rayagada</option>
+                <option>Sambalpur</option><option>Subarnapur</option><option>Sundergarh</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reg-aadhaar">Aadhaar Number <span class="req">*</span></label>
+              <input type="text" id="reg-aadhaar" name="aadhaar" placeholder="12-digit Aadhaar" maxlength="12" pattern="[0-9]{12}" required autocomplete="off" />
+              <small class="field-hint">Stored securely. Displayed masked on dashboard.</small>
+            </div>
+            <div class="form-group form-group--full">
+              <label for="reg-address">Full Address <span class="req">*</span></label>
+              <textarea id="reg-address" name="address" placeholder="House No., Street, Village/City, PIN Code" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="reg-photo">Passport Photo</label>
+              <div class="file-upload-wrap">
+                <input type="file" id="reg-photo" name="photo" accept="image/*" />
+                <label for="reg-photo" class="file-upload-label">
+                  <span>&#128247; Choose Photo</span>
+                  <small>JPG/PNG · Max 2MB</small>
+                </label>
+              </div>
+            </div>
+            <div class="form-group photo-preview-group">
+              <label>Preview</label>
+              <div class="photo-preview-frame">
+                <img id="photo-preview" src="assets/images/default-avatar.png" alt="Photo preview" />
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg" id="register-btn">Register as Volunteer</button>
+          </div>
+          <div id="register-msg" class="form-msg" role="alert"></div>
+        </form>
+      </div>
+
+      <!-- LOGIN TAB -->
+      <div class="vol-panel" id="tab-login" role="tabpanel">
+        <form class="vol-form vol-form--narrow" id="vol-login-form" novalidate>
+          <div class="login-header-icon">&#128274;</div>
+          <h3 class="login-title">Volunteer Login</h3>
+          <p class="login-sub">Enter your Volunteer ID and registered mobile to access your dashboard.</p>
+          <div class="form-group">
+            <label for="login-id">Volunteer ID <span class="req">*</span></label>
+            <input type="text" id="login-id" placeholder="e.g. MLF-OD-00001" required />
+          </div>
+          <div class="form-group">
+            <label for="login-mobile">Registered Mobile <span class="req">*</span></label>
+            <input type="tel" id="login-mobile" placeholder="10-digit mobile" maxlength="10" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login to Dashboard</button>
+          <div id="login-msg" class="form-msg" role="alert"></div>
+        </form>
+      </div>
+
+      <!-- DASHBOARD TAB -->
+      <div class="vol-panel" id="tab-dashboard" role="tabpanel">
+        <div id="dashboard-content" class="dashboard-wrap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ID CARD MODAL ===================== -->
+  <div class="modal-overlay" id="id-card-modal" role="dialog" aria-modal="true" aria-label="Volunteer ID Card">
+    <div class="modal-box modal-box--card">
+      <button class="modal-close" id="id-card-close" aria-label="Close ID Card modal">&times;</button>
+      <div id="id-card-render"></div>
+      <div class="id-card-actions">
+        <button class="btn btn-primary" id="print-id-btn">&#128424; Print ID Card</button>
+        <button class="btn btn-outline" id="download-id-btn">&#8681; Download</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+        <p class="section-desc">We'd love to hear from you. Drop a message and we'll respond within 48 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-info-block">
+            <div class="contact-info-icon">&#128205;</div>
+            <div>
+              <h4>Our Office</h4>
+              <p>My Lifeline Foundation<br />Plot No. 42, Saheed Nagar<br />Bhubaneswar – 751007, Odisha</p>
+            </div>
+          </div>
+          <div class="contact-info-block">
+            <div class="contact-info-icon">&#128222;</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+          </div>
+          <div class="contact-info-block">
+            <div class="contact-info-icon">&#9993;</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:contact@mylifelinefoundation.org">contact@mylifelinefoundation.org</a></p>
+            </div>
+          </div>
+          <div class="social-strip">
+            <a href="#" class="social-btn" aria-label="Facebook">f</a>
+            <a href="#" class="social-btn" aria-label="Instagram">in</a>
+            <a href="#" class="social-btn" aria-label="Twitter">tw</a>
+            <a href="#" class="social-btn" aria-label="YouTube">yt</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">li</a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Your Name <span class="req">*</span></label>
+              <input type="text" id="c-name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email <span class="req">*</span></label>
+              <input type="email" id="c-email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Subject <span class="req">*</span></label>
+            <input type="text" id="c-subject" placeholder="How can we help?" required />
+          </div>
+          <div class="form-group">
+            <label for="c-msg">Message <span class="req">*</span></label>
+            <textarea id="c-msg" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message &#10132;</button>
+          <div id="contact-msg" class="form-msg" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="MLF Logo" class="footer-logo" />
+        <span class="footer-brand-name">My Lifeline Foundation</span>
+        <p class="footer-tagline">Transforming lives with compassion, integrity, and purpose. Since 2018.</p>
+        <p class="footer-reg">Registered under Societies Registration Act, 1860</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Volunteer Portal</h5>
+        <ul>
+          <li><a href="#volunteer-section">Register as Volunteer</a></li>
+          <li><a href="#volunteer-section">Volunteer Login</a></li>
+          <li><a href="#volunteer-section">My ID Card</a></li>
+          <li><a href="#volunteer-section">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Stay Updated</h5>
+        <p>Subscribe for latest news and events.</p>
+        <div class="newsletter-wrap">
+          <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Subscribe email" />
+          <button class="btn btn-primary newsletter-btn">Subscribe</button>
+        </div>
+        <p class="footer-note">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 My Lifeline Foundation. All Rights Reserved.</p>
+      <p>Designed with &#9829; for Odisha</p>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/calendar-2026.js"></script>
+  <script src="assets/js/notice-engine.js"></script>
+  <script src="assets/js/qr.js"></script>
+  <script src="assets/js/volunteer-engine.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
