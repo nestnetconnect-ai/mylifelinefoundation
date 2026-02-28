@@ -1,1 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Lifeline Foundation – Empowering Rural Odisha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* ═══════════════════════════════════════════════
+   ROOT VARIABLES
+═══════════════════════════════════════════════ */
+:root{
+  --blue:#0A4D8C;--blue-dk:#073A6B;--blue-lt:#1565C0;
+  --green:#2E8B57;--green-lt:#3AA368;
+  --orange:#F57C00;--orange-lt:#FFF3E0;
+  --white:#FFFFFF;--off:#F7F9FC;--gray:#6B7280;--gray-lt:#E8EDF5;--text:#1A202C;
+  --sh-sm:0 2px 14px rgba(10,77,140,.08);
+  --sh-md:0 8px 32px rgba(10,77,140,.13);
+  --sh-lg:0 20px 60px rgba(10,77,140,.18);
+  --r:20px;--r-sm:12px;
+  --glass:rgba(255,255,255,0.12);
+  --glass-border:rgba(255,255,255,0.25);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 3%;height:70px;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(10,77,140,.09);transition:box-shadow .3s;}
+.nav.scrolled{box-shadow:var(--sh-md);}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-ico{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.logo-txt strong{display:block;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--blue);line-height:1.1;}
+.logo-txt span{font-size:10px;color:var(--gray);letter-spacing:.3px;text-transform:uppercase;}
+.nav-links{display:flex;gap:4px;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--text);font-size:13px;font-weight:500;padding:8px 12px;border-radius:8px;transition:all .2s;cursor:pointer;}
+.nav-links a:hover{background:var(--gray-lt);color:var(--blue);}
+.nav-btn-login{border:1.5px solid var(--blue)!important;color:var(--blue)!important;border-radius:9px!important;}
+.nav-btn-login:hover{background:var(--blue)!important;color:var(--white)!important;}
+.nav-btn-volunteer{background:var(--green)!important;color:var(--white)!important;border-radius:9px!important;font-weight:600!important;}
+.nav-btn-volunteer:hover{background:var(--green-lt)!important;transform:translateY(-1px);}
+.nav-btn-donate{background:var(--orange)!important;color:var(--white)!important;border-radius:9px!important;font-weight:700!important;}
+.nav-btn-donate:hover{background:#d96d00!important;transform:translateY(-1px);}
+.nav-btn-profile{background:var(--blue)!important;color:var(--white)!important;border-radius:9px!important;font-weight:600!important;}
+.nav-btn-profile:hover{background:var(--blue-lt)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.hamburger span{width:24px;height:2px;background:var(--blue);border-radius:2px;}
+.mob-menu{display:none;position:fixed;top:70px;left:0;right:0;z-index:999;background:var(--white);border-bottom:1px solid var(--gray-lt);padding:16px 4%;flex-direction:column;gap:6px;box-shadow:var(--sh-md);}
+.mob-menu.open{display:flex;}
+.mob-menu a{text-decoration:none;color:var(--text);font-weight:500;padding:12px 16px;border-radius:10px;font-size:15px;cursor:pointer;}
+.mob-menu a:hover{background:var(--gray-lt);}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:70px;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,77,140,.90) 0%,rgba(10,77,140,.65) 45%,rgba(46,139,87,.70) 100%),url('pexels-pixabay-159632.jpg') center/cover no-repeat;}
+.hero-g1{position:absolute;bottom:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,124,0,.2) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.hero-g2{position:absolute;top:80px;left:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(46,139,87,.22) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.hero-wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 4%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+.hero-txt{color:var(--white);}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.18);border:1px solid rgba(245,124,0,.35);padding:8px 18px;border-radius:50px;text-decoration: none;font-size:12px;font-weight:600;color:#FFCC80;margin-bottom:26px;letter-spacing:.5px;text-transform:uppercase;animation:fadeUp .8s ease both;}
+.hero-badge::before{content:'●';color:var(--green);font-size:10px;animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-txt h1{font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,54px);font-weight:800;line-height:1.15;margin-bottom:20px;animation:fadeUp .8s .1s ease both;}
+.hero-txt h1 em{color:var(--orange);font-style:normal;}
+.hero-txt p{font-size:clamp(14px,1.6vw,16px);line-height:1.75;color:rgba(255,255,255,.85);max-width:480px;margin-bottom:36px;animation:fadeUp .8s .2s ease both;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s .3s ease both;}
+.btn-org{background:var(--orange);color:var(--white);padding:13px 28px;border-radius:12px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;box-shadow:0 4px 20px rgba(245,124,0,.5);font-family:'Poppins',sans-serif;cursor:pointer;border:none;}
+.btn-org:hover{background:#d96d00;transform:translateY(-3px);box-shadow:0 8px 30px rgba(245,124,0,.6);}
+.btn-wh{background:rgba(255,255,255,.13);color:var(--white);padding:13px 28px;border-radius:12px;border:1.5px solid rgba(255,255,255,.45);font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;backdrop-filter:blur(8px);font-family:'Poppins',sans-serif;cursor:pointer;}
+.btn-wh:hover{background:rgba(255,255,255,.22);transform:translateY(-3px);}
+.hero-card{background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:28px;color:var(--white);animation:fadeUp .8s .4s ease both;}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.h-stat{text-align:center;padding:18px 10px;background:rgba(255,255,255,.09);border-radius:13px;}
+.h-stat-n{font-family:'Poppins',sans-serif;font-size:32px;font-weight:800;color:var(--orange);line-height:1;}
+.h-stat-l{font-size:11px;color:rgba(255,255,255,.7);margin-top:5px;text-transform:uppercase;letter-spacing:.4px;line-height:1.3;}
+.hero-q{margin-top:18px;padding:16px;background:rgba(46,139,87,.2);border-radius:13px;border-left:3px solid #3AA368;}
+.hero-q p{font-size:13px;line-height:1.65;color:rgba(255,255,255,.85);font-style:italic;}
+.hero-q cite{display:block;margin-top:8px;font-size:12px;color:var(--orange);font-weight:700;font-style:normal;}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;animation:bob 2s infinite;}
+.scroll-line{width:1px;height:34px;background:rgba(255,255,255,.3);}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══════════════════════════════════════════════
+   CLOCK WIDGET (TOP-RIGHT FLOATING)
+═══════════════════════════════════════════════ */
+.clock-widget{
+  position:fixed;top:80px;right:16px;z-index:990;
+  width:230px;
+  background:rgba(10,40,80,0.55);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.15);
+  color:var(--white);
+  transition:opacity .3s;
+}
+.clock-widget.hero-hidden{opacity:0;pointer-events:none;}
+.cw-time{
+  font-family:'Poppins',sans-serif;
+  font-size:30px;font-weight:800;
+  letter-spacing:2px;color:#FFDD80;
+  text-align:center;line-height:1;
+  text-shadow:0 0 20px rgba(255,200,80,.5);
+}
+.cw-date{font-size:11px;text-align:center;color:rgba(255,255,255,.7);margin-top:3px;letter-spacing:1px;font-weight:600;}
+.cw-divider{height:1px;background:rgba(255,255,255,.15);margin:10px 0;}
+.cw-notice-box{height:72px;overflow:hidden;position:relative;}
+.cw-notice-scroll{
+  display:flex;flex-direction:column;gap:0;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+}
+.cw-notice-item{
+  min-height:72px;padding:6px 2px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.cw-notice-tag{
+  display:inline-block;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  padding:2px 7px;border-radius:4px;margin-bottom:4px;
+}
+.tag-event{background:rgba(245,124,0,.3);color:#FFCC80;}
+.tag-program{background:rgba(46,139,87,.35);color:#86EFAC;}
+.tag-birthday{background:rgba(219,39,119,.3);color:#F9A8D4;}
+.tag-welcome{background:rgba(99,102,241,.3);color:#C4B5FD;}
+.tag-rating{background:rgba(234,179,8,.3);color:#FDE68A;}
+.cw-notice-text{font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.9);}
+.cw-dots{display:flex;gap:5px;justify-content:center;margin-top:8px;}
+.cw-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .3s;cursor:pointer;}
+.cw-dot.active{background:var(--orange);width:14px;border-radius:3px;}
+
+/* ═══════════════════════════════════════════════
+   MODAL SYSTEM
+═══════════════════════════════════════════════ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(7,58,107,0.75);
+  backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:16px;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--white);
+  border-radius:24px;
+  width:100%;max-width:600px;max-height:90vh;
+  overflow-y:auto;
+  box-shadow:var(--sh-lg);
+  position:relative;
+  animation:modalIn .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+.modal-box.wide{max-width:760px;}
+@keyframes modalIn{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-hd{
+  padding:24px 28px 18px;
+  border-bottom:1px solid var(--gray-lt);
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;background:var(--white);z-index:1;border-radius:24px 24px 0 0;
+}
+.modal-hd h2{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--blue);}
+.modal-hd span{font-size:12px;color:var(--gray);}
+.modal-close{width:32px;height:32px;border-radius:8px;border:none;background:var(--gray-lt);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--gray);}
+.modal-close:hover{background:#fee2e2;color:#dc2626;}
+.modal-body{padding:24px 28px 28px;}
+
+/* FORM */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.form-row.single{grid-template-columns:1fr;}
+.form-row.three{grid-template-columns:1fr 1fr 1fr;}
+.field{display:flex;flex-direction:column;gap:5px;}
+.field label{font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;}
+.field input,.field select,.field textarea{
+  padding:10px 13px;border:1.5px solid var(--gray-lt);border-radius:10px;
+  font-size:14px;font-family:'Open Sans',sans-serif;color:var(--text);
+  transition:border-color .2s,box-shadow .2s;outline:none;background:var(--white);
+}
+.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,77,140,.08);}
+.field input.err{border-color:#ef4444;}
+.field-note{font-size:11px;color:var(--gray);margin-top:2px;}
+.form-section-title{
+  font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;
+  color:var(--blue);text-transform:uppercase;letter-spacing:1px;
+  padding:10px 0 8px;border-top:1px solid var(--gray-lt);margin-top:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.tc-box{
+  background:var(--off);border:1px solid var(--gray-lt);border-radius:12px;
+  padding:14px;margin:16px 0;font-size:12.5px;color:var(--gray);line-height:1.7;
+}
+.tc-box p{margin-bottom:6px;display:flex;gap:6px;align-items:flex-start;}
+.tc-box p::before{content:'•';color:var(--orange);font-weight:700;flex-shrink:0;}
+.tc-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:18px;cursor:pointer;}
+.tc-check input[type=checkbox]{width:17px;height:17px;margin-top:2px;accent-color:var(--green);flex-shrink:0;}
+.tc-check span{font-size:13px;color:var(--text);font-weight:500;line-height:1.5;}
+.btn-submit{
+  width:100%;padding:14px;border-radius:12px;border:none;
+  background:var(--green);color:var(--white);
+  font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;transition:all .3s;
+  box-shadow:0 4px 16px rgba(46,139,87,.35);
+}
+.btn-submit:hover:not(:disabled){background:var(--green-lt);transform:translateY(-2px);}
+.btn-submit:disabled{background:#9CA3AF;cursor:not-allowed;box-shadow:none;}
+.btn-blue-full{
+  width:100%;padding:13px;border-radius:12px;border:none;
+  background:var(--blue);color:var(--white);
+  font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(10,77,140,.3);
+}
+.btn-blue-full:hover{background:var(--blue-lt);transform:translateY(-2px);}
+
+/* ═══════════════════════════════════════════════
+   SUCCESS SCREEN
+═══════════════════════════════════════════════ */
+.success-overlay{
+  position:fixed;inset:0;z-index:3000;
+  background:linear-gradient(135deg,var(--blue-dk) 0%,#0d4f30 100%);
+  display:none;align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;padding:24px;
+}
+.success-overlay.open{display:flex;}
+.success-circle{
+  width:110px;height:110px;border-radius:50%;
+  background:rgba(46,139,87,.2);border:3px solid var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:50px;margin-bottom:28px;
+  animation:popIn .6s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
+.success-overlay h1{font-family:'Poppins',sans-serif;font-size:clamp(20px,3vw,30px);font-weight:800;color:var(--white);margin-bottom:12px;max-width:560px;}
+.success-overlay p{font-size:15px;color:rgba(255,255,255,.8);max-width:460px;line-height:1.7;margin-bottom:30px;}
+.success-id-badge{
+  background:rgba(255,255,255,.1);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.25);border-radius:14px;
+  padding:16px 32px;margin-bottom:28px;
+  font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;
+  color:#FFDD80;letter-spacing:2px;
+}
+.btn-goto-profile{
+  background:var(--orange);color:var(--white);
+  padding:15px 36px;border-radius:14px;border:none;
+  font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;
+  cursor:pointer;transition:all .3s;
+  box-shadow:0 4px 20px rgba(245,124,0,.5);
+}
+.btn-goto-profile:hover{background:#d96d00;transform:translateY(-3px);}
+
+/* ═══════════════════════════════════════════════
+   PROFILE DASHBOARD
+═══════════════════════════════════════════════ */
+.profile-overlay{
+  position:fixed;inset:0;z-index:2500;
+  background:linear-gradient(135deg,#EFF6FF 0%,#F0FDF4 100%);
+  display:none;overflow-y:auto;
+}
+.profile-overlay.open{display:block;}
+.profile-header-bar{
+  background:var(--blue);padding:14px 4%;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.profile-header-bar .logo-w{display:flex;align-items:center;gap:10px;color:var(--white);}
+.profile-header-bar .logo-w span{font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;}
+.profile-header-btns{display:flex;gap:10px;}
+.btn-sm{padding:8px 18px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Poppins',sans-serif;border:none;}
+.btn-sm-outline{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.3);}
+.btn-sm-outline:hover{background:rgba(255,255,255,.2);}
+.btn-sm-danger{background:#ef4444;color:var(--white);}
+.btn-sm-danger:hover{background:#dc2626;}
+.btn-sm-save{background:var(--green);color:var(--white);}
+.btn-sm-save:hover{background:var(--green-lt);}
+
+.profile-container{max-width:960px;margin:0 auto;padding:30px 4% 60px;}
+.profile-grid{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start;}
+
+.profile-card-left{
+  background:var(--white);border-radius:var(--r);
+  box-shadow:var(--sh-sm);padding:28px;text-align:center;
+  border:1px solid var(--gray-lt);position:sticky;top:20px;
+}
+.profile-photo-wrap{position:relative;width:120px;height:120px;margin:0 auto 16px;}
+.profile-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--blue);}
+.profile-photo-default{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:44px;border:4px solid var(--blue);color:var(--white);}
+.photo-upload-btn{
+  position:absolute;bottom:2px;right:2px;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--orange);border:2px solid var(--white);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:14px;transition:all .2s;
+}
+.photo-upload-btn:hover{transform:scale(1.1);}
+.photo-upload-input{display:none;}
+.profile-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--blue);margin-bottom:4px;}
+.profile-id-tag{
+  display:inline-block;background:var(--blue);color:var(--white);
+  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;
+  letter-spacing:1px;font-family:'Poppins',sans-serif;margin-bottom:12px;
+}
+.profile-status{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#DCFCE7;color:var(--green);
+  padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:18px;
+}
+.profile-status::before{content:'●';font-size:8px;}
+.qr-wrapper{
+  background:var(--off);border:1px solid var(--gray-lt);
+  border-radius:12px;padding:14px;margin-bottom:16px;
+}
+.qr-wrapper p{font-size:11px;color:var(--gray);margin-top:8px;text-align:center;}
+#profile-qr-code canvas,#profile-qr-code img{border-radius:8px;}
+.btn-download-id{
+  width:100%;padding:11px;border-radius:10px;border:none;
+  background:linear-gradient(135deg,var(--blue),var(--blue-lt));
+  color:var(--white);font-family:'Poppins',sans-serif;
+  font-size:13px;font-weight:700;cursor:pointer;transition:all .3s;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.btn-download-id:hover{transform:translateY(-2px);box-shadow:var(--sh-md);}
+
+.profile-card-right{background:var(--white);border-radius:var(--r);box-shadow:var(--sh-sm);padding:28px;border:1px solid var(--gray-lt);}
+.profile-section-title{
+  font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;
+  color:var(--blue);text-transform:uppercase;letter-spacing:1px;
+  border-bottom:2px solid var(--gray-lt);padding-bottom:10px;margin:20px 0 16px;
+  display:flex;align-items:center;gap:7px;
+}
+.profile-section-title:first-child{margin-top:0;}
+.profile-field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.profile-field-row.single{grid-template-columns:1fr;}
+.profile-field-row.three{grid-template-columns:1fr 1fr 1fr;}
+.pfield{display:flex;flex-direction:column;gap:4px;}
+.pfield label{font-size:11.5px;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;}
+.pfield input,.pfield select{
+  padding:10px 13px;border:1.5px solid var(--gray-lt);border-radius:10px;
+  font-size:14px;font-family:'Open Sans',sans-serif;color:var(--text);
+  transition:all .2s;outline:none;background:var(--white);
+}
+.pfield input:focus,.pfield select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,77,140,.08);}
+.pfield input[readonly]{background:var(--off);color:var(--gray);cursor:not-allowed;}
+.pfield .locked-tag{font-size:11px;color:var(--gray);margin-top:3px;}
+
+/* ═══════════════════════════════════════════════
+   QR PUBLIC PROFILE
+═══════════════════════════════════════════════ */
+.qr-profile-card{
+  background:var(--white);border-radius:24px;
+  max-width:380px;width:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  overflow:hidden;animation:modalIn .3s both;
+}
+.qr-profile-header{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  padding:30px 24px 80px;text-align:center;position:relative;
+}
+.qr-profile-header::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;
+  height:60px;background:var(--white);
+  clip-path:ellipse(55% 100% at 50% 100%);
+}
+.qr-profile-photo{
+  width:90px;height:90px;border-radius:50%;
+  object-fit:cover;border:4px solid rgba(255,255,255,.8);
+  margin-bottom:10px;
+}
+.qr-profile-photo-def{
+  width:90px;height:90px;border-radius:50%;
+  background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:36px;border:4px solid rgba(255,255,255,.8);margin:0 auto 10px;
+}
+.qr-profile-header h2{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--white);}
+.qr-profile-body{padding:20px 24px 28px;text-align:center;}
+.qr-vol-id{
+  font-family:'Poppins',sans-serif;font-size:16px;font-weight:800;
+  color:var(--blue);letter-spacing:2px;margin-bottom:6px;
+}
+.qr-vol-status{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#DCFCE7;color:var(--green);
+  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:16px;
+}
+.qr-vol-status::before{content:'✓';font-weight:700;}
+.qr-info-row{
+  display:flex;justify-content:center;gap:20px;
+  font-size:13px;color:var(--gray);margin-bottom:12px;
+}
+.qr-info-row strong{color:var(--text);}
+.qr-org-badge{
+  background:var(--off);border:1px solid var(--gray-lt);
+  border-radius:10px;padding:10px;
+  font-size:12px;color:var(--gray);margin-top:8px;
+}
+
+/* ═══════════════════════════════════════════════
+   DIGITAL ID CARD (for PDF)
+═══════════════════════════════════════════════ */
+#id-card-template{
+  position:fixed;left:-9999px;top:-9999px;
+  width:340px;background:linear-gradient(135deg,var(--blue-dk) 0%,var(--blue) 60%,#1B5E20 100%);
+  border-radius:16px;padding:0;overflow:hidden;font-family:'Open Sans',sans-serif;
+}
+.id-card-inner{padding:20px;}
+.id-card-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:14px;}
+.id-card-logo{width:36px;height:36px;border-radius:8px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;}
+.id-card-org{color:var(--white);}
+.id-card-org strong{display:block;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;line-height:1.2;}
+.id-card-org span{font-size:8px;color:rgba(255,255,255,.6);}
+.id-card-vol-type{background:var(--orange);color:var(--white);font-size:8px;font-weight:700;letter-spacing:1px;padding:2px 8px;border-radius:4px;text-align:right;margin-bottom:12px;}
+.id-card-main{display:flex;gap:14px;align-items:flex-start;}
+.id-card-photo{width:64px;height:64px;border-radius:10px;object-fit:cover;border:2px solid rgba(255,255,255,.3);flex-shrink:0;}
+.id-card-photo-def{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:28px;border:2px solid rgba(255,255,255,.3);flex-shrink:0;}
+.id-card-info{}
+.id-card-name{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.id-card-detail{font-size:10px;color:rgba(255,255,255,.7);line-height:1.6;}
+.id-card-detail strong{color:var(--white);}
+.id-card-footer{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;align-items:center;}
+.id-card-id{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;color:#FFDD80;letter-spacing:1.5px;}
+.id-card-qr{width:50px;height:50px;}
+
+/* ═══════════════════════════════════════════════
+   SECTION HELPERS
+═══════════════════════════════════════════════ */
+.sec{padding:80px 4%;max-width:1200px;margin:0 auto;}
+.bg-off{background:var(--off);}
+.lbl{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:12px;font-family:'Poppins',sans-serif;}
+.lbl::before{content:'';width:18px;height:2.5px;background:var(--green);border-radius:2px;}
+.sec-title{font-family:'Poppins',sans-serif;font-size:clamp(24px,3.5vw,42px);font-weight:800;color:var(--blue);line-height:1.2;margin-bottom:12px;}
+.sec-title em{color:var(--orange);font-style:normal;}
+.sec-desc{font-size:16px;line-height:1.8;color:var(--gray);}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.img-wrap{position:relative;}
+.img-main{width:100%;height:420px;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh-lg);}
+.img-float{position:absolute;bottom:-24px;right:-24px;width:190px;height:140px;object-fit:cover;border-radius:var(--r-sm);border:4px solid var(--white);box-shadow:var(--sh-md);}
+.img-badge{position:absolute;top:22px;left:-16px;background:var(--blue);color:var(--white);padding:14px 16px;border-radius:var(--r-sm);box-shadow:var(--sh-md);}
+.img-badge strong{display:block;font-family:'Poppins',sans-serif;font-size:24px;color:var(--orange);}
+.img-badge span{font-size:10px;color:rgba(255,255,255,.7);}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;}
+.mv-card{padding:20px;border-radius:var(--r-sm);border:1px solid var(--gray-lt);transition:all .3s;}
+.mv-card:hover{transform:translateY(-3px);box-shadow:var(--sh-sm);}
+.mv-m{background:#EFF6FF;border-color:#BFDBFE;}
+.mv-v{background:#F0FDF4;border-color:#BBF7D0;}
+.mv-card h4{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;margin-bottom:7px;}
+.mv-m h4{color:var(--blue);}
+.mv-v h4{color:var(--green);}
+.mv-card p{font-size:13px;line-height:1.65;color:var(--gray);}
+
+/* PROGRAMS */
+.prg-hd{text-align:center;margin-bottom:50px;}
+.prg-hd .lbl{justify-content:center;}
+.prg-hd .sec-desc{max-width:520px;margin:0 auto;text-align:center;}
+.prg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.prg-card{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);border:1px solid var(--gray-lt);transition:all .4s;}
+.prg-card:hover{transform:translateY(-10px);box-shadow:var(--sh-lg);}
+.prg-img{width:100%;height:200px;object-fit:cover;}
+.prg-bar{height:4px;}
+.prg-card:nth-child(1) .prg-bar{background:linear-gradient(90deg,var(--blue),var(--blue-lt));}
+.prg-card:nth-child(2) .prg-bar{background:linear-gradient(90deg,var(--green),var(--green-lt));}
+.prg-card:nth-child(3) .prg-bar{background:linear-gradient(90deg,var(--orange),#FFA726);}
+.prg-body{padding:24px;}
+.prg-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.prg-card:nth-child(1) .prg-ico{background:#DBEAFE;}
+.prg-card:nth-child(2) .prg-ico{background:#DCFCE7;}
+.prg-card:nth-child(3) .prg-ico{background:var(--orange-lt);}
+.prg-card h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--blue);margin-bottom:9px;}
+.prg-card p{font-size:14px;line-height:1.75;color:var(--gray);}
+.prg-card a{display:inline-flex;align-items:center;gap:5px;margin-top:16px;font-size:13px;font-weight:700;text-decoration:none;transition:gap .2s;font-family:'Poppins',sans-serif;}
+.prg-card:nth-child(1) a{color:var(--blue);}
+.prg-card:nth-child(2) a{color:var(--green);}
+.prg-card:nth-child(3) a{color:var(--orange);}
+.prg-card a:hover{gap:9px;}
+
+/* IMPACT */
+.imp-sec{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dk) 50%,#1B5E20 100%);position:relative;overflow:hidden;}
+.imp-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:560px;height:560px;background:radial-gradient(circle,rgba(245,124,0,.14) 0%,transparent 60%);border-radius:50%;}
+.imp-in{max-width:1200px;margin:0 auto;padding:80px 4%;position:relative;z-index:1;}
+.imp-hd{text-align:center;margin-bottom:56px;}
+.imp-hd .lbl{color:#86EFAC;justify-content:center;}
+.imp-hd .lbl::before{background:#86EFAC;}
+.imp-hd .sec-title{color:var(--white);}
+.imp-hd .sec-desc{color:rgba(255,255,255,.72);max-width:460px;margin:0 auto;text-align:center;}
+.imp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.imp-card{text-align:center;padding:36px 18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:var(--r);backdrop-filter:blur(10px);transition:all .3s;}
+.imp-card:hover{background:rgba(255,255,255,.13);transform:translateY(-5px);}
+.imp-ico{font-size:40px;margin-bottom:12px;}
+.imp-num{font-family:'Poppins',sans-serif;font-size:clamp(36px,4vw,52px);font-weight:900;color:var(--orange);line-height:1;}
+.imp-lbl{font-size:13px;color:rgba(255,255,255,.75);margin-top:9px;line-height:1.45;font-weight:500;}
+
+/* GALLERY */
+.gal-hd{text-align:center;margin-bottom:44px;}
+.gal-hd .lbl{justify-content:center;}
+.gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:230px 230px;gap:12px;}
+.gi{border-radius:var(--r-sm);overflow:hidden;position:relative;}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.gi:hover img{transform:scale(1.06);}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,77,140,.82) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:12px;}
+.gi:hover .gi-ov{opacity:1;}
+.gi-cap{color:var(--white);font-size:12px;font-weight:600;}
+.g1{grid-column:span 5;grid-row:span 2;}
+.g2{grid-column:span 4;}
+.g3{grid-column:span 3;}
+.g4{grid-column:span 4;}
+.g5{grid-column:span 3;}
+
+/* STORIES */
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+.st-card{background:var(--white);border-radius:var(--r);padding:26px;box-shadow:var(--sh-sm);border:1px solid var(--gray-lt);display:flex;gap:16px;align-items:flex-start;transition:all .3s;}
+.st-card:hover{box-shadow:var(--sh-md);transform:translateY(-4px);}
+.st-av{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid var(--orange);flex-shrink:0;}
+.st-body blockquote{font-size:14px;line-height:1.75;color:var(--gray);font-style:italic;margin-bottom:9px;}
+.st-body cite{font-size:13px;font-weight:700;color:var(--blue);font-style:normal;}
+.st-body .loc{font-size:12px;color:var(--green);margin-top:2px;}
+
+/* JOIN */
+.join-hd{text-align:center;margin-bottom:46px;}
+.join-hd .lbl{justify-content:center;}
+.join-hd .sec-desc{max-width:480px;margin:0 auto;text-align:center;}
+.join-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto 40px;}
+.jn-card{background:var(--white);border-radius:var(--r);padding:32px 26px;box-shadow:var(--sh-sm);border:1px solid var(--gray-lt);transition:all .3s;}
+.jn-card:hover{transform:translateY(-5px);box-shadow:var(--sh-md);}
+.jn-ico{font-size:36px;margin-bottom:13px;}
+.jn-card h3{font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:var(--blue);margin-bottom:9px;}
+.jn-card p{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:22px;}
+.btn-blue{background:var(--blue);color:var(--white);padding:12px 26px;border-radius:11px;border:none;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;box-shadow:0 4px 16px rgba(10,77,140,.3);font-family:'Poppins',sans-serif;cursor:pointer;}
+.btn-blue:hover{background:var(--blue-lt);transform:translateY(-2px);}
+.btn-green{background:var(--green);color:var(--white);padding:12px 26px;border-radius:11px;border:none;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .3s;box-shadow:0 4px 16px rgba(46,139,87,.3);font-family:'Poppins',sans-serif;cursor:pointer;}
+.btn-green:hover{background:var(--green-lt);transform:translateY(-2px);}
+.trust-row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--gray-lt);}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--gray);}
+.trust-item span{color:var(--green);}
+
+/* FOOTER */
+footer{background:var(--blue-dk);color:rgba(255,255,255,.8);}
+.ft-top{max-width:1200px;margin:0 auto;padding:60px 4% 44px;display:grid;grid-template-columns:2fr 1fr 1fr 1.6fr;gap:44px;}
+.ft-brand{display:flex;flex-direction:column;gap:13px;}
+.ft-logo{display:flex;align-items:center;gap:11px;}
+.ft-logo-ico{width:42px;height:42px;background:linear-gradient(135deg,var(--orange),var(--green));border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.ft-logo-txt strong{display:block;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--white);line-height:1.1;}
+.ft-logo-txt span{font-size:10px;color:rgba(255,255,255,.5);}
+.ft-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.6);}
+.ft-reg{font-size:11px;color:rgba(255,255,255,.4);line-height:1.9;}
+.ft-reg strong{color:rgba(255,255,255,.6);}
+.ft-col h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:var(--white);margin-bottom:16px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.ft-col ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:color .2s;}
+.ft-col ul li a:hover{color:var(--orange);}
+.ft-ci{display:flex;gap:11px;align-items:flex-start;margin-bottom:12px;}
+.ft-ci-ico{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px;}
+.ft-ci-txt{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+.ft-ci-txt a{color:rgba(255,255,255,.6);text-decoration:none;}
+.ft-ci-txt a:hover{color:var(--orange);}
+.socials{display:flex;gap:9px;margin-top:12px;}
+.soc{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .2s;text-decoration:none;color:var(--white);}
+.soc:hover{background:var(--orange);transform:translateY(-3px);}
+.ft-bot-wrap{border-top:1px solid rgba(255,255,255,.08);}
+.ft-bot-in{max-width:1200px;margin:0 auto;padding:16px 4%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px;color:rgba(255,255,255,.38);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* LOGIN MODAL special */
+.login-icon{text-align:center;font-size:48px;margin-bottom:10px;}
+.login-divider{text-align:center;font-size:12px;color:var(--gray);margin:12px 0;position:relative;}
+.login-divider::before,.login-divider::after{content:'';position:absolute;top:50%;width:38%;height:1px;background:var(--gray-lt);}
+.login-divider::before{left:0;}
+.login-divider::after{right:0;}
+
+/* TOASTS */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);z-index:4000;
+  background:var(--blue-dk);color:var(--white);
+  padding:12px 24px;border-radius:12px;font-size:14px;font-weight:600;
+  box-shadow:var(--sh-lg);transition:transform .3s ease;
+  display:flex;align-items:center;gap:8px;white-space:nowrap;
+}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.toast.success{background:var(--green);}
+.toast.error{background:#ef4444;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .imp-grid{grid-template-columns:repeat(2,1fr);}
+  .ft-top{grid-template-columns:1fr 1fr;}
+  .profile-grid{grid-template-columns:1fr;}
+  .profile-card-left{position:static;}
+  .clock-widget{width:200px;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero-wrap{grid-template-columns:1fr;}
+  .hero-card{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .img-float{display:none;}
+  .img-badge{top:14px;left:14px;}
+  .prg-cards{grid-template-columns:1fr;}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .g1,.g2,.g3,.g4,.g5{grid-column:span 1;height:180px;}
+  .g1{grid-column:span 2;}
+  .stories{grid-template-columns:1fr;}
+  .join-cards{grid-template-columns:1fr;}
+  .ft-top{grid-template-columns:1fr;}
+  .ft-bot-in{flex-direction:column;text-align:center;}
+  .hero-btns{flex-direction:column;}
+  .mv-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .form-row.three{grid-template-columns:1fr 1fr;}
+  .profile-field-row{grid-template-columns:1fr;}
+  .profile-field-row.three{grid-template-columns:1fr 1fr;}
+  .clock-widget{width:190px;right:10px;}
+  .cw-time{font-size:26px;}
+  .modal-body{padding:18px 20px 22px;}
+  .modal-hd{padding:18px 20px 14px;}
+}
+@media(max-width:480px){
+  .imp-grid{grid-template-columns:1fr 1fr;}
+  .clock-widget{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="nav" id="navbar">
+  <a href="#" class="logo">
+    <img src="Lifeline.png" alt="My Lifeline Foundation Logo" style="height:42px;">
+    <div class="logo-txt">
+      <strong>My Lifeline Foundation</strong>
+      <span>Empowering Rural Odisha</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#programs">Programs</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <!-- Dynamic auth buttons injected by JS -->
+    <span id="navAuthButtons"></span>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#" onclick="toggleMenu()">🏠 Home</a>
+  <a href="#about" onclick="toggleMenu()">ℹ️ About Us</a>
+  <a href="#programs" onclick="toggleMenu()">📚 Programs</a>
+  <a href="#gallery" onclick="toggleMenu()">🖼️ Gallery</a>
+  <a href="#contact" onclick="toggleMenu()">📞 Contact</a>
+  <div id="mobAuthButtons" style="display:flex;flex-direction:column;gap:6px;"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CLOCK WIDGET (FLOATING TOP-RIGHT)
+═══════════════════════════════════════════ -->
+<div class="clock-widget" id="clockWidget">
+  <div class="cw-time" id="cwTime">00:00:00</div>
+  <div class="cw-date" id="cwDate">--/--/----</div>
+  <div class="cw-divider"></div>
+  <div class="cw-notice-box">
+    <div class="cw-notice-scroll" id="cwScroll"></div>
+  </div>
+  <div class="cw-dots" id="cwDots"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-g1"></div>
+  <div class="hero-g2"></div>
+  <div class="hero-wrap">
+    <div class="hero-txt">
+      <a href="https://maps.app.goo.gl/xpW8ZgVuM76Hz5Ak8" target="_blank" class="hero-badge">
+  📍 Office: Kendrapara, Odisha – India
+</a>
+      <h1>Empowering Rural Lives Through <em>Education</em> & Hope</h1>
+      <p>We work in rural Odisha to support education, health awareness, and youth development for underprivileged communities.</p>
+      <div class="hero-btns">
+        <button class="btn-org" onclick="handleDonate()">❤️ Donate Now</button>
+        <button class="btn-wh" onclick="handleVolunteerBtn()">🤝 Join as Volunteer</button>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT US
+═══════════════════════════════════════════ -->
+<section class="bg-off" id="about">
+  <div class="sec">
+    <div class="about-grid">
+      <div class="img-wrap reveal">
+        <div class="img-badge"><strong>500+</strong><span>Families uplifted<br>across Odisha</span></div>
+        <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?w=800&q=80" alt="Rural community" class="img-main">
+        <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69799?w=400&q=80" alt="Health camp" class="img-float">
+      </div>
+      <div class="reveal d2">
+        <div class="lbl">Who We Are</div>
+        <h2 class="sec-title">About <em>My Lifeline</em><br>Foundation</h2>
+        <p class="sec-desc" style="margin-bottom:14px;">My Lifeline Foundation is a nonprofit organization dedicated to uplifting underprivileged communities in rural Odisha. We focus on education, health awareness, and youth development to create sustainable change and improve quality of life.</p>
+        <p class="sec-desc" style="font-size:14px;">Incorporated under Section 8 of the Companies Act 2013, we operate with full transparency and community trust.</p>
+        <div class="mv-grid">
+          <div class="mv-card mv-m"><h4>🎯 Our Mission</h4><p>To empower rural communities through education, health awareness, and youth development programs that create long-term positive impact.</p></div>
+          <div class="mv-card mv-v"><h4>🌅 Our Vision</h4><p>A society where every child has access to education, every family has basic health awareness, and every youth has opportunity and guidance.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROGRAMS
+═══════════════════════════════════════════ -->
+<section id="programs">
+  <div class="sec">
+    <div class="prg-hd reveal">
+      <div class="lbl">Our Focus Areas</div>
+      <h2 class="sec-title">Programs Making a <em>Difference</em></h2>
+      <p class="sec-desc">Three core areas driving lasting change in rural communities across Odisha.</p>
+    </div>
+    <div class="prg-cards">
+      <div class="prg-card reveal">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education" class="prg-img">
+        <div class="prg-bar"></div>
+        <div class="prg-body"><div class="prg-ico">🎓</div><h3>Education Support</h3><p>We help children from rural areas access quality education, learning materials, and academic guidance.</p><a href="#">Learn More →</a></div>
+      </div>
+      <div class="prg-card reveal d2">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Health" class="prg-img">
+        <div class="prg-bar"></div>
+        <div class="prg-body"><div class="prg-ico">🩺</div><h3>Health Awareness</h3><p>We organise health camps and awareness programs to promote better health practices in villages.</p><a href="#">Learn More →</a></div>
+      </div>
+      <div class="prg-card reveal d3">
+        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Youth" class="prg-img">
+        <div class="prg-bar"></div>
+        <div class="prg-body"><div class="prg-ico">👨‍🌾</div><h3>Rural Youth Development</h3><p>We guide rural youth with skills, training, and career direction for a better future.</p><a href="#">Learn More →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     IMPACT
+═══════════════════════════════════════════ -->
+<section class="imp-sec">
+  <div class="imp-in">
+    <div class="imp-hd reveal">
+      <div class="lbl">Our Impact</div>
+      <h2 class="sec-title">Numbers That <em>Speak</em></h2>
+      <p class="sec-desc">Every number represents a real life touched, a family uplifted.</p>
+    </div>
+    <div class="imp-grid">
+      <div class="imp-card reveal"><div class="imp-ico">🏠</div><div class="imp-num" data-target="500">0<span style="font-size:.55em">+</span></div><div class="imp-lbl">Families Helped</div></div>
+      <div class="imp-card reveal d2"><div class="imp-ico">📋</div><div class="imp-num" data-target="50">0<span style="font-size:.55em">+</span></div><div class="imp-lbl">Programs Conducted</div></div>
+      <div class="imp-card reveal d3"><div class="imp-ico">🌟</div><div class="imp-num" data-target="1000">0<span style="font-size:.55em">+</span></div><div class="imp-lbl">Youth Reached</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     GALLERY + STORIES
+═══════════════════════════════════════════ -->
+<section id="gallery">
+  <div class="sec">
+    <div class="gal-hd reveal">
+      <div class="lbl">Real Stories, Real Impact</div>
+      <h2 class="sec-title">Changing Lives, <em>One Step</em> at a Time</h2>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="gi g1"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Children"><div class="gi-ov"><span class="gi-cap">Children at our learning centre</span></div></div>
+      <div class="gi g2"><img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69799?w=600&q=80" alt="Health"><div class="gi-ov"><span class="gi-cap">Health awareness camp</span></div></div>
+      <div class="gi g3"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Volunteer"><div class="gi-ov"><span class="gi-cap">Volunteer orientation</span></div></div>
+      <div class="gi g4"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Youth"><div class="gi-ov"><span class="gi-cap">Youth skill workshop</span></div></div>
+      <div class="gi g5"><img src="https://images.unsplash.com/photo-1609220136736-443140cfeaa5?w=400&q=80" alt="Community"><div class="gi-ov"><span class="gi-cap">Community programme</span></div></div>
+    </div>
+    <div class="stories">
+      <div class="st-card reveal"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80" alt="" class="st-av"><div class="st-body"><blockquote>"Because of My Lifeline Foundation, my child is going to school again. They helped us with everything."</blockquote><cite>Mother of a Beneficiary</cite><div class="loc">📍 Kendrapara, Odisha</div></div></div>
+      <div class="st-card reveal d2"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="" class="st-av"><div class="st-body"><blockquote>"The youth development program gave me confidence and a clear direction. I now run my own small business."</blockquote><cite>Youth Programme Graduate</cite><div class="loc">📍 Rural Odisha</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     JOIN THE MOVEMENT
+═══════════════════════════════════════════ -->
+<section class="bg-off" id="volunteer">
+  <div class="sec">
+    <div class="join-hd reveal">
+      <div class="lbl">Join the Movement</div>
+      <h2 class="sec-title">Together We Can Change<br><em>Thousands</em> of Lives</h2>
+      <p class="sec-desc">Whether you donate or give your time — every contribution transforms lives in rural Odisha.</p>
+    </div>
+    <div class="join-cards">
+      <div class="jn-card reveal" id="donateSection">
+        <div class="jn-ico">❤️</div>
+        <h3>Donate Now</h3>
+        <p>Your donation funds education, health camps, and youth programs. 80G tax exemption available.</p>
+        <button class="btn-blue" onclick="handleDonate()">❤️ Donate Now</button>
+      </div>
+      <div class="jn-card reveal d2">
+        <div class="jn-ico">🤝</div>
+        <h3>Become a Volunteer</h3>
+        <p>Join our growing family of volunteers. Teach, mentor, organise, or manage — your skills shape the future.</p>
+        <button class="btn-green" onclick="handleVolunteerBtn()">🤝 Become a Volunteer</button>
+      </div>
+    </div>
+    <div class="trust-row reveal">
+      <div class="trust-item"><span>✅</span> Section 8 Company — Registered</div>
+      <div class="trust-item"><span>✅</span> 80G Tax Exemption</div>
+      <div class="trust-item"><span>✅</span> Transparent Fund Management</div>
+      <div class="trust-item"><span>✅</span> PAN Verified Organization</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer id="contact">
+  <div class="ft-top">
+    <div class="ft-brand">
+  <div class="ft-logo">
+    <img src="Lifeline.png" alt="Logo" style="height:42px;">
+    <div class="ft-logo-txt"><strong>My Lifeline Foundation</strong><span>Empowering Rural Odisha</span></div>
+  </div>
+      <p>A nonprofit dedicated to education, health awareness, and youth development for underprivileged rural communities in Odisha, India.</p>
+      <div class="ft-reg">Incorporated under Section 8, Companies Act 2013<br>Reg. No: <strong>U85100OR2020NPL032868</strong><br>PAN: <strong>AANCM3910F</strong></div>
+      <div class="socials">
+        <a href="#" class="soc">𝗙</a><a href="#" class="soc">📷</a><a href="#" class="soc">𝕏</a><a href="#" class="soc">▶</a><a href="#" class="soc">💬</a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Quick Links</h4><ul><li><a href="#">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#programs">Programs</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#volunteer">Volunteer</a></li></ul></div>
+    <div class="ft-col"><h4>Programs</h4><ul><li><a href="#programs">🎓 Education Support</a></li><li><a href="#programs">🩺 Health Awareness</a></li><li><a href="#programs">👨‍🌾 Youth Development</a></li><li><a href="#">👩 Women Empowerment</a></li></ul></div>
+    <div class="ft-col"><h4>Contact Us</h4>
+      <div class="ft-ci"><div class="ft-ci-ico">📍</div><div class="ft-ci-txt">Plot No-635, Garapur, In front of Collector Residence, Kendrapara – 754211, Odisha, India</div></div>
+      <div class="ft-ci"><div class="ft-ci-ico">📞</div><div class="ft-ci-txt"><a href="tel:06727796700">06727-796700</a></div></div>
+      <div class="ft-ci"><div class="ft-ci-ico">✉️</div><div class="ft-ci-txt"><a href="mailto:mylifelinefoundation@gmail.com">mylifelinefoundation@gmail.com</a></div></div>
+      <div class="ft-ci"><div class="ft-ci-ico">🌐</div><div class="ft-ci-txt"><a href="http://www.mylifelinefoundation.org" target="_blank">www.mylifelinefoundation.org</a></div></div>
+    </div>
+  </div>
+  <div class="ft-bot-wrap"><div class="ft-bot-in"><span>© 2025 My Lifeline Foundation. All Rights Reserved. | Reg: U85100OR2020NPL032868 | PAN: AANCM3910F | Section 8, Companies Act 2013</span><span>Made with ❤️ for Rural Odisha</span></div></div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     REGISTER MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalRegister">
+  <div class="modal-box wide">
+    <div class="modal-hd">
+      <div><h2>🤝 Volunteer Registration</h2><span>Join My Lifeline Foundation — All fields are mandatory</span></div>
+      <button class="modal-close" onclick="closeModal('modalRegister')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="regForm" onsubmit="submitRegistration(event)">
+        <div class="form-section-title">👤 Personal Information</div>
+        <div class="form-row">
+          <div class="field"><label>Full Name *</label><input type="text" id="reg-name" placeholder="Enter your full name" required></div>
+          <div class="field"><label>Date of Birth *</label><input type="date" id="reg-dob" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Father's Name *</label><input type="text" id="reg-father" placeholder="Father's full name" required></div>
+          <div class="field"><label>Mother's Name *</label><input type="text" id="reg-mother" placeholder="Mother's full name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Occupation *</label><input type="text" id="reg-occupation" placeholder="e.g., Student, Farmer, Teacher" required></div>
+          <div class="field"><label>Mobile Number *</label><input type="tel" id="reg-mobile" placeholder="10-digit mobile number" maxlength="10" required></div>
+        </div>
+        <div class="form-row single">
+          <div class="field">
+            <label>Aadhaar Number * <span style="font-size:10px;color:var(--gray);font-weight:400;">(stored securely, never shown publicly)</span></label>
+            <input type="text" id="reg-aadhaar" placeholder="12-digit Aadhaar number" maxlength="12" required>
+            <span class="field-note">🔒 Only last 4 digits will be visible. One Aadhaar = One account.</span>
+          </div>
+        </div>
+
+        <div class="form-section-title">🏠 Address Details</div>
+        <div class="form-row">
+          <div class="field"><label>AT (Village) *</label><input type="text" id="reg-at" placeholder="Village / Area name" required></div>
+          <div class="field"><label>Post *</label><input type="text" id="reg-post" placeholder="Post office name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Police Station *</label><input type="text" id="reg-ps" placeholder="Police Station name" required></div>
+          <div class="field"><label>District *</label><input type="text" id="reg-district" placeholder="District name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>State *</label>
+            <select id="reg-state" required>
+              <option value="">Select State</option>
+              <option value="Odisha" selected>Odisha</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field"><label>PIN Code *</label><input type="text" id="reg-pin" placeholder="6-digit PIN code" maxlength="6" required></div>
+        </div>
+
+        <div class="form-section-title">📋 Terms & Conditions</div>
+        <div class="tc-box">
+          <p>My Lifeline Foundation is a Section 8 non-profit organization registered under the Companies Act 2013.</p>
+          <p>I confirm that all information provided above is true and correct to the best of my knowledge.</p>
+          <p>Volunteer registration does not create any employment relationship or salary/remuneration entitlement.</p>
+          <p>The Foundation may verify, approve, suspend or deactivate my volunteer account at any time without prior notice.</p>
+          <p>My personal data will be used only for organizational, social, and program-related purposes of My Lifeline Foundation.</p>
+        </div>
+        <label class="tc-check">
+          <input type="checkbox" id="tcCheckbox" onchange="toggleSubmit()">
+          <span>I have read and agree to the <strong>Terms & Conditions</strong> of My Lifeline Foundation. I confirm all information is accurate.</span>
+        </label>
+        <button type="submit" class="btn-submit" id="submitBtn" disabled>🤝 Complete Registration</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     LOGIN MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalLogin">
+  <div class="modal-box" style="max-width:440px;">
+    <div class="modal-hd">
+      <div><h2>🔐 Volunteer Login</h2><span>Access your volunteer profile</span></div>
+      <button class="modal-close" onclick="closeModal('modalLogin')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="login-icon">👤</div>
+      <div class="form-row single" style="margin-bottom:14px;">
+        <div class="field">
+          <label>Volunteer ID *</label>
+          <input type="text" id="login-id" placeholder="e.g. MLF-OD-000001" style="text-transform:uppercase;">
+          <span class="field-note">Your unique Volunteer ID received on registration</span>
+        </div>
+      </div>
+      <div class="form-row single" style="margin-bottom:22px;">
+        <div class="field">
+          <label>Registered Mobile Number *</label>
+          <input type="tel" id="login-mobile" placeholder="10-digit mobile number" maxlength="10">
+        </div>
+      </div>
+      <button class="btn-blue-full" onclick="submitLogin()">🔐 Login to My Profile</button>
+      <div class="login-divider" style="margin-top:20px;">Not registered yet?</div>
+      <button class="btn-submit" style="margin-top:12px;background:var(--green);" onclick="closeModal('modalLogin');openModal('modalRegister')">🤝 Register as Volunteer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     QR PUBLIC PROFILE MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalQRProfile">
+  <div class="qr-profile-card">
+    <div class="qr-profile-header">
+      <div id="qrPublicPhoto"></div>
+      <h2 id="qrPublicName">Volunteer Name</h2>
+    </div>
+    <div class="qr-profile-body">
+      <div class="qr-vol-id" id="qrPublicId">MLF-OD-000001</div>
+      <div class="qr-vol-status">Verified Volunteer</div>
+      <div class="qr-info-row">
+        <span>📍 <strong id="qrPublicDistrict">District</strong></span>
+        <span>🗺️ <strong id="qrPublicState">State</strong></span>
+      </div>
+      <div class="qr-org-badge">
+        🌱 My Lifeline Foundation<br>
+        <span style="font-size:10px;">Reg. No: U85100OR2020NPL032868 | Section 8 NGO</span>
+      </div>
+      <button class="btn-blue-full" style="margin-top:16px;" onclick="closeModal('modalQRProfile')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SUCCESS SCREEN
+═══════════════════════════════════════════ -->
+<div class="success-overlay" id="successScreen">
+  <div class="success-circle">✅</div>
+  <h1>Thank you for joining My Lifeline Foundation as a Volunteer!</h1>
+  <p>Your registration is successful. Your unique Volunteer ID has been generated. Welcome to the family! 🌱</p>
+  <div class="success-id-badge" id="successIdBadge">MLF-OD-000001</div>
+  <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:24px;">Save your Volunteer ID — you'll need it to log in to your profile.</p>
+  <button class="btn-goto-profile" onclick="gotoProfile()">👤 Go to My Profile</button>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PROFILE DASHBOARD
+═══════════════════════════════════════════ -->
+<div class="profile-overlay" id="profileDashboard">
+  <div class="profile-header-bar">
+    <div class="logo-w">
+      <div class="logo-ico" style="width:36px;height:36px;font-size:16px;">🌱</div>
+      <span>My Lifeline Foundation — Volunteer Portal</span>
+    </div>
+    <div class="profile-header-btns">
+      <button class="btn-sm btn-sm-save" onclick="saveProfileChanges()">💾 Save Changes</button>
+      <button class="btn-sm btn-sm-outline" onclick="window.location.href='#'">🏠 Home</button>
+      <button class="btn-sm btn-sm-danger" onclick="logoutVolunteer()">🚪 Logout</button>
+    </div>
+  </div>
+  <div class="profile-container">
+    <div class="profile-grid">
+      <!-- LEFT: ID CARD -->
+      <div class="profile-card-left">
+        <div class="profile-photo-wrap">
+          <div id="profilePhotoDisplay" class="profile-photo-default">👤</div>
+          <div class="photo-upload-btn" onclick="document.getElementById('photoInput').click()">📷</div>
+          <input type="file" id="photoInput" class="photo-upload-input" accept="image/*" onchange="handlePhotoUpload(event)">
+        </div>
+        <div class="profile-name" id="displayName">Volunteer Name</div>
+        <div class="profile-id-tag" id="displayVolId">MLF-OD-000001</div>
+        <div class="profile-status">Active Volunteer</div>
+        <div class="qr-wrapper">
+          <div id="profile-qr-code" style="display:flex;justify-content:center;"></div>
+          <p>Scan to view public profile</p>
+        </div>
+        <button class="btn-download-id" onclick="downloadIDCard()">⬇️ Download Digital ID Card</button>
+      </div>
+
+      <!-- RIGHT: EDIT FORM -->
+      <div class="profile-card-right">
+        <div class="profile-section-title">👤 Personal Information</div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>Full Name</label><input type="text" id="p-name" placeholder="Full name"></div>
+          <div class="pfield"><label>Date of Birth</label><input type="date" id="p-dob"></div>
+        </div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>Father's Name</label><input type="text" id="p-father" placeholder="Father's name"></div>
+          <div class="pfield"><label>Mother's Name</label><input type="text" id="p-mother" placeholder="Mother's name"></div>
+        </div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>Occupation</label><input type="text" id="p-occupation" placeholder="Your occupation"></div>
+          <div class="pfield"><label>Mobile Number</label><input type="tel" id="p-mobile" placeholder="Mobile number" maxlength="10"></div>
+        </div>
+        <div class="profile-field-row single">
+          <div class="pfield">
+            <label>Aadhaar Number</label>
+            <input type="text" id="p-aadhaar" readonly>
+            <span class="locked-tag">🔒 Aadhaar is masked for security. Not editable.</span>
+          </div>
+        </div>
+
+        <div class="profile-section-title">🏠 Address Information</div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>AT (Village)</label><input type="text" id="p-at" placeholder="Village / Area"></div>
+          <div class="pfield"><label>Post</label><input type="text" id="p-post" placeholder="Post office"></div>
+        </div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>Police Station</label><input type="text" id="p-ps" placeholder="Police Station"></div>
+          <div class="pfield"><label>District</label><input type="text" id="p-district" placeholder="District"></div>
+        </div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>State</label>
+            <select id="p-state">
+              <option value="Odisha">Odisha</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="pfield"><label>PIN Code</label><input type="text" id="p-pin" placeholder="PIN Code" maxlength="6"></div>
+        </div>
+
+        <div class="profile-section-title">📋 Account Information</div>
+        <div class="profile-field-row">
+          <div class="pfield"><label>Volunteer ID</label><input type="text" id="p-volid" readonly></div>
+          <div class="pfield"><label>Joined On</label><input type="text" id="p-joined" readonly></div>
+        </div>
+        <div class="profile-field-row single">
+          <div class="pfield"><label>Account Status</label><input type="text" id="p-status" readonly value="Active Volunteer ✅"></div>
+        </div>
+
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn-sm btn-sm-save" style="padding:12px 28px;font-size:14px;" onclick="saveProfileChanges()">💾 Save Changes</button>
+          <button class="btn-sm btn-sm-danger" style="padding:12px 28px;font-size:14px;" onclick="logoutVolunteer()">🚪 Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HIDDEN ID CARD TEMPLATE (for PDF)
+═══════════════════════════════════════════ -->
+<div id="id-card-template">
+  <div class="id-card-inner">
+    <div class="id-card-top">
+      <div class="id-card-logo">🌱</div>
+      <div class="id-card-org">
+        <strong>My Lifeline Foundation</strong>
+        <span>Empowering Rural Odisha</span>
+      </div>
+    </div>
+    <div class="id-card-vol-type">VOLUNTEER ID CARD</div>
+    <div class="id-card-main">
+      <div id="idCardPhoto" class="id-card-photo-def">👤</div>
+      <div class="id-card-info">
+        <div class="id-card-name" id="idCardName">Volunteer Name</div>
+        <div class="id-card-detail">
+          <strong>Occupation:</strong> <span id="idCardOcc">-</span><br>
+          <strong>District:</strong> <span id="idCardDist">-</span><br>
+          <strong>State:</strong> <span id="idCardState">-</span><br>
+          <strong>Mobile:</strong> <span id="idCardMob">-</span><br>
+          <strong>Status:</strong> <span style="color:#86EFAC;">Active Volunteer</span>
+        </div>
+      </div>
+    </div>
+    <div class="id-card-footer">
+      <div>
+        <div class="id-card-id" id="idCardVolId">MLF-OD-000001</div>
+        <div style="font-size:8px;color:rgba(255,255,255,.5);margin-top:2px;">Reg: U85100OR2020NPL032868</div>
+      </div>
+      <div id="idCardQR" class="id-card-qr"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT — FULL APP
+═══════════════════════════════════════════ -->
+<script>
+/* ─────────────────────────────────────────────
+   APP STATE & STORAGE
+───────────────────────────────────────────── */
+const DB = {
+  getVolunteers: () => JSON.parse(localStorage.getItem('mlf_volunteers') || '[]'),
+  saveVolunteers: (data) => localStorage.setItem('mlf_volunteers', JSON.stringify(data)),
+  getSession: () => localStorage.getItem('mlf_session'),
+  setSession: (id) => localStorage.setItem('mlf_session', id),
+  clearSession: () => localStorage.removeItem('mlf_session'),
+  getCounter: () => parseInt(localStorage.getItem('mlf_counter') || '0'),
+  incCounter: () => { const n = DB.getCounter() + 1; localStorage.setItem('mlf_counter', n); return n; }
+};
+
+function getCurrentVolunteer() {
+  const sid = DB.getSession();
+  if (!sid) return null;
+  return DB.getVolunteers().find(v => v.id === sid) || null;
+}
+
+/* ─────────────────────────────────────────────
+   VOLUNTEER ID GENERATOR
+───────────────────────────────────────────── */
+function generateVolunteerId() {
+  const n = DB.incCounter();
+  return 'MLF-OD-' + String(n).padStart(6, '0');
+}
+
+/* ─────────────────────────────────────────────
+   NAV AUTH BUTTONS
+───────────────────────────────────────────── */
+function updateNav() {
+  const vol = getCurrentVolunteer();
+  const navAuth = document.getElementById('navAuthButtons');
+  const mobAuth = document.getElementById('mobAuthButtons');
+
+  if (vol) {
+    navAuth.innerHTML = `
+      <a class="nav-btn-profile" onclick="openProfile()">👤 My Profile</a>
+      <a class="nav-btn-donate" onclick="handleDonate()">❤️ Donate</a>
+      <a style="color:var(--gray);font-size:13px;padding:8px 10px;" onclick="logoutVolunteer()">Logout</a>
+    `;
+    mobAuth.innerHTML = `
+      <a onclick="openProfile();toggleMenu()" style="background:var(--blue);color:white;font-weight:700;border-radius:10px;">👤 My Profile</a>
+      <a onclick="handleDonate();toggleMenu()" style="background:var(--orange);color:white;font-weight:700;border-radius:10px;">❤️ Donate</a>
+      <a onclick="logoutVolunteer()" style="background:#ef4444;color:white;font-weight:700;border-radius:10px;">🚪 Logout</a>
+    `;
+  } else {
+    navAuth.innerHTML = `
+      <a class="nav-btn-login" onclick="openModal('modalLogin')">🔐 Login</a>
+      <a class="nav-btn-volunteer" onclick="handleVolunteerBtn()">🤝 Join Volunteer</a>
+      <a class="nav-btn-donate" onclick="handleDonate()">❤️ Donate</a>
+    `;
+    mobAuth.innerHTML = `
+      <a onclick="openModal('modalLogin');toggleMenu()">🔐 Login</a>
+      <a onclick="handleVolunteerBtn();toggleMenu()" style="background:var(--green);color:white;font-weight:700;border-radius:10px;">🤝 Join as Volunteer</a>
+      <a onclick="handleDonate();toggleMenu()" style="background:var(--orange);color:white;font-weight:700;border-radius:10px;">❤️ Donate Now</a>
+    `;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   BUTTON ACTIONS
+───────────────────────────────────────────── */
+function handleVolunteerBtn() {
+  if (getCurrentVolunteer()) { openProfile(); }
+  else { openModal('modalRegister'); }
+}
+
+function handleDonate() {
+  showToast('Redirecting to Donation Page... 💝', 'success');
+  // In production: window.location.href = '/donate';
+}
+
+/* ─────────────────────────────────────────────
+   MODAL SYSTEM
+───────────────────────────────────────────── */
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(o => {
+  o.addEventListener('click', e => { if (e.target === o) closeModal(o.id); });
+});
+
+/* ─────────────────────────────────────────────
+   REGISTRATION
+───────────────────────────────────────────── */
+function toggleSubmit() {
+  const cb = document.getElementById('tcCheckbox');
+  document.getElementById('submitBtn').disabled = !cb.checked;
+}
+
+function submitRegistration(e) {
+  e.preventDefault();
+  const aadhaar = document.getElementById('reg-aadhaar').value.trim();
+  const mobile = document.getElementById('reg-mobile').value.trim();
+
+  // Validation
+  if (aadhaar.length !== 12 || !/^\d+$/.test(aadhaar)) {
+    showToast('Please enter a valid 12-digit Aadhaar number', 'error'); return;
+  }
+  if (mobile.length !== 10 || !/^\d+$/.test(mobile)) {
+    showToast('Please enter a valid 10-digit mobile number', 'error'); return;
+  }
+  const pin = document.getElementById('reg-pin').value.trim();
+  if (pin.length !== 6 || !/^\d+$/.test(pin)) {
+    showToast('Please enter a valid 6-digit PIN code', 'error'); return;
+  }
+
+  // Check duplicate Aadhaar
+  const volunteers = DB.getVolunteers();
+  const aadhaarHash = aadhaar.slice(-4); // simplified check
+  const isDup = volunteers.some(v => v.aadhaarKey === aadhaar.substring(0,8) + aadhaar.slice(-4));
+  if (isDup) {
+    showToast('An account with this Aadhaar already exists!', 'error'); return;
+  }
+
+  const volId = generateVolunteerId();
+  const today = new Date().toISOString().split('T')[0];
+
+  const volunteer = {
+    id: volId,
+    name: document.getElementById('reg-name').value.trim(),
+    dob: document.getElementById('reg-dob').value,
+    fatherName: document.getElementById('reg-father').value.trim(),
+    motherName: document.getElementById('reg-mother').value.trim(),
+    occupation: document.getElementById('reg-occupation').value.trim(),
+    mobile: mobile,
+    aadhaarDisplay: '**** **** ' + aadhaar.slice(-4),
+    aadhaarKey: aadhaar.substring(0,8) + aadhaar.slice(-4), // security: partial key
+    at: document.getElementById('reg-at').value.trim(),
+    post: document.getElementById('reg-post').value.trim(),
+    ps: document.getElementById('reg-ps').value.trim(),
+    district: document.getElementById('reg-district').value.trim(),
+    state: document.getElementById('reg-state').value,
+    pin: pin,
+    joinDate: today,
+    status: 'Active',
+    photo: '',
+    rating: 0
+  };
+
+  volunteers.push(volunteer);
+  DB.saveVolunteers(volunteers);
+  DB.setSession(volId);
+
+  closeModal('modalRegister');
+  document.getElementById('regForm').reset();
+  document.getElementById('tcCheckbox').checked = false;
+  document.getElementById('submitBtn').disabled = true;
+
+  // Show success
+  document.getElementById('successIdBadge').textContent = volId;
+  document.getElementById('successScreen').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  updateNav();
+  buildNotices();
+}
+
+/* ─────────────────────────────────────────────
+   LOGIN
+───────────────────────────────────────────── */
+function submitLogin() {
+  const inputId = document.getElementById('login-id').value.trim().toUpperCase();
+  const inputMobile = document.getElementById('login-mobile').value.trim();
+
+  if (!inputId || !inputMobile) {
+    showToast('Please enter your Volunteer ID and Mobile Number', 'error'); return;
+  }
+
+  const volunteers = DB.getVolunteers();
+  const vol = volunteers.find(v => v.id === inputId && v.mobile === inputMobile);
+
+  if (!vol) {
+    showToast('Invalid Volunteer ID or Mobile Number', 'error'); return;
+  }
+
+  DB.setSession(vol.id);
+  closeModal('modalLogin');
+  document.getElementById('login-id').value = '';
+  document.getElementById('login-mobile').value = '';
+  updateNav();
+  showToast('Welcome back, ' + vol.name + '! 👋', 'success');
+  setTimeout(() => openProfile(), 800);
+}
+
+/* ─────────────────────────────────────────────
+   LOGOUT
+───────────────────────────────────────────── */
+function logoutVolunteer() {
+  DB.clearSession();
+  document.getElementById('profileDashboard').classList.remove('open');
+  document.body.style.overflow = '';
+  updateNav();
+  showToast('You have been logged out 👋', '');
+}
+
+/* ─────────────────────────────────────────────
+   SUCCESS → PROFILE
+───────────────────────────────────────────── */
+function gotoProfile() {
+  document.getElementById('successScreen').classList.remove('open');
+  document.body.style.overflow = '';
+  openProfile();
+}
+
+/* ─────────────────────────────────────────────
+   PROFILE DASHBOARD
+───────────────────────────────────────────── */
+function openProfile() {
+  const vol = getCurrentVolunteer();
+  if (!vol) { openModal('modalLogin'); return; }
+
+  // Populate fields
+  document.getElementById('p-name').value = vol.name || '';
+  document.getElementById('p-dob').value = vol.dob || '';
+  document.getElementById('p-father').value = vol.fatherName || '';
+  document.getElementById('p-mother').value = vol.motherName || '';
+  document.getElementById('p-occupation').value = vol.occupation || '';
+  document.getElementById('p-mobile').value = vol.mobile || '';
+  document.getElementById('p-aadhaar').value = vol.aadhaarDisplay || '';
+  document.getElementById('p-at').value = vol.at || '';
+  document.getElementById('p-post').value = vol.post || '';
+  document.getElementById('p-ps').value = vol.ps || '';
+  document.getElementById('p-district').value = vol.district || '';
+  document.getElementById('p-state').value = vol.state || '';
+  document.getElementById('p-pin').value = vol.pin || '';
+  document.getElementById('p-volid').value = vol.id || '';
+  document.getElementById('p-joined').value = formatDate(vol.joinDate);
+  document.getElementById('displayName').textContent = vol.name;
+  document.getElementById('displayVolId').textContent = vol.id;
+
+  // Photo
+  const photoEl = document.getElementById('profilePhotoDisplay');
+  if (vol.photo) {
+    photoEl.outerHTML = `<img src="${vol.photo}" class="profile-photo" id="profilePhotoDisplay" alt="Profile">`;
+  } else {
+    if (photoEl.tagName === 'IMG') {
+      photoEl.outerHTML = `<div class="profile-photo-default" id="profilePhotoDisplay">👤</div>`;
+    }
+    document.getElementById('profilePhotoDisplay').textContent = '👤';
+  }
+
+  // Generate QR
+  const qrDiv = document.getElementById('profile-qr-code');
+  qrDiv.innerHTML = '';
+  const qrData = `${window.location.href.split('?')[0]}?volunteer=${vol.id}`;
+  try {
+    new QRCode(qrDiv, { text: qrData, width: 120, height: 120, colorDark:'#073A6B', colorLight:'#ffffff', correctLevel: QRCode.CorrectLevel.M });
+  } catch(e) {}
+
+  document.getElementById('profileDashboard').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function saveProfileChanges() {
+  const vol = getCurrentVolunteer();
+  if (!vol) return;
+  const volunteers = DB.getVolunteers();
+  const idx = volunteers.findIndex(v => v.id === vol.id);
+  if (idx === -1) return;
+
+  volunteers[idx].name = document.getElementById('p-name').value.trim();
+  volunteers[idx].dob = document.getElementById('p-dob').value;
+  volunteers[idx].fatherName = document.getElementById('p-father').value.trim();
+  volunteers[idx].motherName = document.getElementById('p-mother').value.trim();
+  volunteers[idx].occupation = document.getElementById('p-occupation').value.trim();
+  volunteers[idx].mobile = document.getElementById('p-mobile').value.trim();
+  volunteers[idx].at = document.getElementById('p-at').value.trim();
+  volunteers[idx].post = document.getElementById('p-post').value.trim();
+  volunteers[idx].ps = document.getElementById('p-ps').value.trim();
+  volunteers[idx].district = document.getElementById('p-district').value.trim();
+  volunteers[idx].state = document.getElementById('p-state').value;
+  volunteers[idx].pin = document.getElementById('p-pin').value.trim();
+
+  DB.saveVolunteers(volunteers);
+  document.getElementById('displayName').textContent = volunteers[idx].name;
+  showToast('Profile updated successfully! ✅', 'success');
+  buildNotices();
+}
+
+/* ─────────────────────────────────────────────
+   PHOTO UPLOAD
+───────────────────────────────────────────── */
+function handlePhotoUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) { showToast('Image must be under 2MB', 'error'); return; }
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const base64 = e.target.result;
+    // Save to volunteer
+    const vol = getCurrentVolunteer();
+    if (!vol) return;
+    const volunteers = DB.getVolunteers();
+    const idx = volunteers.findIndex(v => v.id === vol.id);
+    if (idx > -1) { volunteers[idx].photo = base64; DB.saveVolunteers(volunteers); }
+
+    // Update display
+    const wrap = document.querySelector('.profile-photo-wrap');
+    const oldEl = document.getElementById('profilePhotoDisplay');
+    const newImg = document.createElement('img');
+    newImg.src = base64;
+    newImg.className = 'profile-photo';
+    newImg.id = 'profilePhotoDisplay';
+    newImg.alt = 'Profile';
+    oldEl.replaceWith(newImg);
+    showToast('Profile photo updated! 📷', 'success');
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ─────────────────────────────────────────────
+   DOWNLOAD ID CARD (PDF)
+───────────────────────────────────────────── */
+async function downloadIDCard() {
+  const vol = getCurrentVolunteer();
+  if (!vol) return;
+
+  showToast('Preparing your ID Card... ⏳', '');
+
+  // Populate template
+  document.getElementById('idCardName').textContent = vol.name;
+  document.getElementById('idCardOcc').textContent = vol.occupation;
+  document.getElementById('idCardDist').textContent = vol.district;
+  document.getElementById('idCardState').textContent = vol.state;
+  document.getElementById('idCardMob').textContent = vol.mobile;
+  document.getElementById('idCardVolId').textContent = vol.id;
+
+  // Photo
+  const photoEl = document.getElementById('idCardPhoto');
+  if (vol.photo) {
+    photoEl.outerHTML = `<img src="${vol.photo}" class="id-card-photo" id="idCardPhoto" alt="Photo">`;
+  } else {
+    if (document.getElementById('idCardPhoto').tagName === 'IMG') {
+      document.getElementById('idCardPhoto').outerHTML = `<div class="id-card-photo-def" id="idCardPhoto">👤</div>`;
+    }
+  }
+
+  // QR for ID card
+  const idCardQR = document.getElementById('idCardQR');
+  idCardQR.innerHTML = '';
+  const qrData = window.location.href.split('?')[0] + '?volunteer=' + vol.id;
+  try {
+    new QRCode(idCardQR, { text: qrData, width: 50, height: 50, colorDark:'#FFFFFF', colorLight:'transparent', correctLevel: QRCode.CorrectLevel.L });
+  } catch(e) {}
+
+  await new Promise(r => setTimeout(r, 600));
+
+  const card = document.getElementById('id-card-template');
+  card.style.left = '0'; card.style.top = '0'; card.style.position = 'fixed'; card.style.zIndex = '-1';
+
+  try {
+    const canvas = await html2canvas(card, { scale: 3, backgroundColor: null, useCORS: true });
+    const imgData = canvas.toDataURL('image/png');
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: [90, 55] });
+    pdf.addImage(imgData, 'PNG', 0, 0, 90, 55);
+    pdf.save(`MLF-Volunteer-ID-${vol.id}.pdf`);
+    showToast('ID Card downloaded! 📄', 'success');
+  } catch(err) {
+    showToast('Download failed. Try again.', 'error');
+  }
+
+  card.style.left = '-9999px'; card.style.top = '-9999px';
+  card.style.position = 'fixed'; card.style.zIndex = '';
+}
+
+/* ─────────────────────────────────────────────
+   QR PUBLIC PROFILE VIEWER
+───────────────────────────────────────────── */
+function showQRProfile(volId) {
+  const volunteers = DB.getVolunteers();
+  const vol = volunteers.find(v => v.id === volId);
+  if (!vol) return;
+
+  document.getElementById('qrPublicName').textContent = vol.name;
+  document.getElementById('qrPublicId').textContent = vol.id;
+  document.getElementById('qrPublicDistrict').textContent = vol.district;
+  document.getElementById('qrPublicState').textContent = vol.state;
+
+  const photoDiv = document.getElementById('qrPublicPhoto');
+  if (vol.photo) {
+    photoDiv.innerHTML = `<img src="${vol.photo}" class="qr-profile-photo" alt="${vol.name}">`;
+  } else {
+    photoDiv.innerHTML = `<div class="qr-profile-photo-def">👤</div>`;
+  }
+
+  openModal('modalQRProfile');
+}
+
+// Check URL param for QR profile on load
+function checkQRParam() {
+  const params = new URLSearchParams(window.location.search);
+  const volParam = params.get('volunteer');
+  if (volParam) { setTimeout(() => showQRProfile(volParam.toUpperCase()), 500); }
+}
+
+/* ─────────────────────────────────────────────
+   LIVE CLOCK
+───────────────────────────────────────────── */
+function startClock() {
+  function tick() {
+    const now = new Date();
+    const hh = String(now.getHours()).padStart(2,'0');
+    const mm = String(now.getMinutes()).padStart(2,'0');
+    const ss = String(now.getSeconds()).padStart(2,'0');
+    document.getElementById('cwTime').textContent = `${hh}:${mm}:${ss}`;
+
+    const dd = String(now.getDate()).padStart(2,'0');
+    const mo = String(now.getMonth()+1).padStart(2,'0');
+    const yyyy = now.getFullYear();
+    document.getElementById('cwDate').textContent = `${dd}/${mo}/${yyyy}`;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+/* ─────────────────────────────────────────────
+   NOTICES SYSTEM
+───────────────────────────────────────────── */
+let noticeIdx = 0;
+let noticeTimer = null;
+let notices = [];
+
+const ODISHA_EVENTS = [
+  { tag: 'event', label: '🎉 Event', text: 'Raja Parba Festival — 13–16 June 2025' },
+  { tag: 'event', label: '🎉 Event', text: 'Rath Yatra, Puri — 27 June 2025' },
+  { tag: 'event', label: '🎉 Event', text: 'Independence Day Celebration — 15 Aug 2025' },
+  { tag: 'event', label: '🎉 Event', text: 'Nuakhai Juhar Festival — Sep 2025' },
+  { tag: 'program', label: '📋 Program', text: 'Free Health Camp — Upcoming at Kendrapara' },
+  { tag: 'program', label: '📋 Program', text: 'Education Drive Vol. 3 — Registration Open' },
+  { tag: 'program', label: '📋 Program', text: 'Youth Skill Training — Batch 4 Enrolling' },
+  { tag: 'rating', label: '⭐ Rating', text: 'Foundation rated ⭐⭐⭐⭐⭐ by 98 beneficiaries' },
+];
+
+function buildNotices() {
+  notices = [...ODISHA_EVENTS];
+
+  const volunteers = DB.getVolunteers();
+  const today = new Date();
+  const todayMMDD = `${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  const yesterday = new Date(today); yesterday.setDate(yesterday.getDate()-1);
+
+  volunteers.forEach(vol => {
+    // Birthday wishes
+    if (vol.dob) {
+      const dobMMDD = vol.dob.substring(5);
+      if (dobMMDD === todayMMDD) {
+        notices.unshift({ tag: 'birthday', label: '🎂 Birthday', text: `Happy Birthday ${vol.name}! 🎉 Best wishes from MLF Family` });
+      }
+    }
+    // Yesterday joined
+    const joinDate = new Date(vol.joinDate);
+    const iYesterday = joinDate.toDateString() === yesterday.toDateString() || joinDate.toDateString() === today.toDateString();
+    if (iYesterday) {
+      const photo = vol.photo ? `<img src="${vol.photo}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;margin-right:4px;">` : '🤝 ';
+      notices.push({ tag: 'welcome', label: '🤝 Welcome', text: `Welcome ${vol.name}! New volunteer joined from ${vol.district || 'Odisha'} 🌱` });
+    }
+  });
+
+  renderNotices();
+}
+
+function renderNotices() {
+  if (notices.length === 0) return;
+  const scroll = document.getElementById('cwScroll');
+  const dots = document.getElementById('cwDots');
+
+  scroll.innerHTML = notices.map(n => `
+    <div class="cw-notice-item">
+      <span class="cw-notice-tag tag-${n.tag}">${n.label}</span>
+      <div class="cw-notice-text">${n.text}</div>
+    </div>
+  `).join('');
+
+  dots.innerHTML = notices.map((_, i) => `<div class="cw-dot ${i===0?'active':''}" onclick="goNotice(${i})"></div>`).join('');
+
+  noticeIdx = 0;
+  if (noticeTimer) clearInterval(noticeTimer);
+  noticeTimer = setInterval(nextNotice, 3500);
+}
+
+function nextNotice() {
+  if (notices.length === 0) return;
+  noticeIdx = (noticeIdx + 1) % notices.length;
+  updateNoticeScroll();
+}
+
+function goNotice(i) {
+  noticeIdx = i;
+  updateNoticeScroll();
+}
+
+function updateNoticeScroll() {
+  const scroll = document.getElementById('cwScroll');
+  scroll.style.transform = `translateY(-${noticeIdx * 72}px)`;
+  document.querySelectorAll('.cw-dot').forEach((d,i) => d.classList.toggle('active', i===noticeIdx));
+}
+
+// Hide clock widget when scrolled past hero
+function handleClockVisibility() {
+  const widget = document.getElementById('clockWidget');
+  widget.classList.toggle('hero-hidden', window.scrollY > window.innerHeight * 0.7);
+}
+
+/* ─────────────────────────────────────────────
+   IMPACT COUNTERS
+───────────────────────────────────────────── */
+function startCounter(el, target) {
+  let cur = 0; const step = target / 80;
+  const tick = () => { cur = Math.min(cur+step, target); el.childNodes[0].textContent = Math.floor(cur).toLocaleString('en-IN'); if(cur<target) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}
+const cntObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ startCounter(e.target, parseInt(e.target.dataset.target)); cntObs.unobserve(e.target); }});
+}, {threshold:.5});
+document.querySelectorAll('.imp-num[data-target]').forEach(el => cntObs.observe(el));
+
+/* ─────────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────────── */
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+/* ─────────────────────────────────────────────
+   TOAST NOTIFICATIONS
+───────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type}`;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+/* ─────────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────────── */
+function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  handleClockVisibility();
+});
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobMenu');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !document.querySelector('.hamburger').contains(e.target))
+    menu.classList.remove('open');
+});
+
+/* ─────────────────────────────────────────────
+   UTILS
+───────────────────────────────────────────── */
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+}
+
+/* ─────────────────────────────────────────────
+   INIT
+───────────────────────────────────────────── */
+window.addEventListener('DOMContentLoaded', () => {
+  startClock();
+  buildNotices();
+  updateNav();
+  checkQRParam();
+});
+</script>
+</body>
+</html>
 
